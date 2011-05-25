@@ -7,6 +7,7 @@
 //
 
 #import "HelloWorldAppDelegate.h"
+#import "Greeter.h"
 
 @implementation HelloWorldAppDelegate
 
@@ -19,7 +20,7 @@
 	[label setSelectable:NO];
 	[label setAlignment:NSCenterTextAlignment];
 	[label setFont:[NSFont boldSystemFontOfSize:36]];
-	[label setStringValue:@"Hello World"];
+	[label setStringValue:[Greeter greeting]];
 	[[self.window contentView] addSubview:label];
 
 }

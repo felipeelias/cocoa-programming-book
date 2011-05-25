@@ -13,4 +13,6 @@
 
 }
 
++(NSString *) greeting;
+
 @end
