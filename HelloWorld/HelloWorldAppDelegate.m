@@ -12,11 +12,16 @@
 
 @synthesize window;
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-	NSRect labelLocation = NSMakeRect(20, 20, 540, 50);
-	NSTextField *label = [[NSTextField alloc] initWithFrame:labelLocation];
+- (void) createLabel {
+  NSRect labelFrame = NSMakeRect(20, 20, 540, 50);
+	NSTextField *label = [[NSTextField alloc] initWithFrame:labelFrame];
 	[label setStringValue:@"Hello World"];
 	[[self.window contentView] addSubview:label];
+
+}
+- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+	[self createLabel];
+
 }
 
 @end
