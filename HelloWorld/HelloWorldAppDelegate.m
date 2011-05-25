@@ -13,21 +13,25 @@
 
 @synthesize window;
 
-- (void) createLabel {
-  NSRect labelFrame = NSMakeRect(20, 20, 540, 50);
+- (NSTextField *) labelWithText: (NSString *) labelText {
+	NSRect labelFrame = NSMakeRect(20, 20, 540, 50);
 	NSTextField *label = [[NSTextField alloc] initWithFrame:labelFrame];
 	[label setEditable:NO];
 	[label setSelectable:NO];
 	[label setAlignment:NSCenterTextAlignment];
 	[label setFont:[NSFont boldSystemFontOfSize:36]];
-	Greeter *greeter = [[Greeter alloc] init];
-	[label setStringValue:[greeter greeting]];
-	[[self.window contentView] addSubview:label];
-
+	[label setStringValue:labelText];
+	return label;
 }
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-	[self createLabel];
 
+- (Greeter *) greeter {
+	return [[Greeter alloc] init];
+}
+
+- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+	Greeter *greeter = [self greeter];
+	NSTextField *label = [self labelWithText:[greeter greeting]];
+	[[self.window contentView] addSubview:label];
 }
 
 @end
