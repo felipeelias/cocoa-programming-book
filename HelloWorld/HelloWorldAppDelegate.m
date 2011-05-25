@@ -15,6 +15,10 @@
 - (void) createLabel {
   NSRect labelFrame = NSMakeRect(20, 20, 540, 50);
 	NSTextField *label = [[NSTextField alloc] initWithFrame:labelFrame];
+	[label setEditable:NO];
+	[label setSelectable:NO];
+	[label setAlignment:NSCenterTextAlignment];
+	[label setFont:[NSFont boldSystemFontOfSize:36]];
 	[label setStringValue:@"Hello World"];
 	[[self.window contentView] addSubview:label];
 
