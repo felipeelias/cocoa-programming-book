@@ -13,7 +13,10 @@
 @synthesize window;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-	NSLog(@"Hello World");
+	NSRect labelLocation = NSMakeRect(20, 20, 540, 50);
+	NSTextField *label = [[NSTextField alloc] initWithFrame:labelLocation];
+	[label setStringValue:@"Hello World"];
+	[[self.window contentView] addSubview:label];
 }
 
 @end
