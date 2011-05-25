@@ -13,6 +13,6 @@
 
 }
 
-+(NSString *) greeting;
+-(NSString *) greeting;
 
 @end

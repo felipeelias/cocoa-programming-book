@@ -20,7 +20,8 @@
 	[label setSelectable:NO];
 	[label setAlignment:NSCenterTextAlignment];
 	[label setFont:[NSFont boldSystemFontOfSize:36]];
-	[label setStringValue:[Greeter greeting]];
+	Greeter *greeter = [[Greeter alloc] init];
+	[label setStringValue:[greeter greeting]];
 	[[self.window contentView] addSubview:label];
 
 }

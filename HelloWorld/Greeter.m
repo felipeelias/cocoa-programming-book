@@ -11,7 +11,7 @@
 
 @implementation Greeter
 
-+(NSString *) greeting {
+-(NSString *) greeting {
 	return @"Hello World";
 }
 
