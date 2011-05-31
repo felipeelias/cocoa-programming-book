@@ -10,7 +10,7 @@
 
 
 @interface Greeter : NSObject {
-
+	NSString *name;
 }
 
 -(NSString *) greeting;

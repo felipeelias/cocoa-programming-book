@@ -12,7 +12,14 @@
 @implementation Greeter
 
 -(NSString *) greeting {
-	return @"Hello World";
+	return [[NSString alloc] initWithFormat:@"Hello %@!", name];
+}
+
+-(id) init {
+	if (self = [super init]) {
+		name = @"Worlds";
+	}
+	return self;
 }
 
 @end
