@@ -28,11 +28,18 @@
 	return [[Greeter alloc] initWithName:personName];
 }
 
+-(void) setUpperCaseName:(Greeter *) greeter {
+	NSLog(@"The name originally was %@", [greeter name]);
+	[greeter setName:[[greeter name] uppercaseString]];
+	NSLog(@"The name is now %@", [greeter name]);
+}
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 	Greeter *greeter = [self greeterFor:@"Maggie"];
 	NSLog(@"Greeter: %@", greeter);
 	NSLog(@"This error occurred in %@ at line %d in files %s", NSStringFromSelector(_cmd), __LINE__, __FILE__);
 	NSTextField *label = [self labelWithText:[greeter greeting]];
+	[self setUpperCaseName:greeter];
 	[[self.window contentView] addSubview:label];
 }
 
