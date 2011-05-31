@@ -29,9 +29,9 @@
 }
 
 -(void) setUpperCaseName:(Greeter *) greeter {
-	NSLog(@"The name originally was %@", [greeter name]);
-	[greeter setName:[[greeter name] uppercaseString]];
-	NSLog(@"The name is now %@", [greeter name]);
+	NSLog(@"The name originally was %@", greeter.name);
+	greeter.name = [greeter.name uppercaseString];
+	NSLog(@"The name is now %@", greeter.name);
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {

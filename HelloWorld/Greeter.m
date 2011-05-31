@@ -14,16 +14,16 @@
 @synthesize name;
 
 -(NSString *) greeting {
-	return [[NSString alloc] initWithFormat:@"Hello %@!", [self name]];
+	return [[NSString alloc] initWithFormat:@"Hello %@!", self.name];
 }
 
 -(NSString *) description {
-	return [[NSString alloc] initWithFormat:@"name: %@ \n created: %@", [self name], [NSDate date]];
+	return [[NSString alloc] initWithFormat:@"name: %@ \n created: %@", self.name, [NSDate date]];
 }
 
 -(id) initWithName: (NSString *) newName {
 	if (self = [super init]) {
-		[self setName: newName];
+		self.name = newName;
 	}
 	return self;
 }
