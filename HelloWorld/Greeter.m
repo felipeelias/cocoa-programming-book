@@ -11,6 +11,8 @@
 
 @implementation Greeter
 
+@synthesize name;
+
 -(NSString *) greeting {
 	return [[NSString alloc] initWithFormat:@"Hello %@!", [self name]];
 }
@@ -28,14 +30,6 @@
 
 -(id) init {
 	return [self initWithName:@"Worlds"];
-}
-
--(NSString *) name {
-	return name;
-}
-
--(void) setName:(NSString *) newName {
-	name = newName;
 }
 
 @end

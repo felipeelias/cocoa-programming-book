@@ -15,7 +15,6 @@
 
 -(NSString *) greeting;
 -(id) initWithName:(NSString *)name;
--(NSString *) name;
--(void) setName:(NSString *)name;
+@property(copy) NSString *name;
 
 @end
