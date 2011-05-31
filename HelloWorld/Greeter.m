@@ -15,6 +15,10 @@
 	return [[NSString alloc] initWithFormat:@"Hello %@!", name];
 }
 
+-(NSString *) description {
+	return [[NSString alloc] initWithFormat:@"name: %@ \n created: %@", name, [NSDate date]];
+}
+
 -(id) init {
 	if (self = [super init]) {
 		name = @"Worlds";

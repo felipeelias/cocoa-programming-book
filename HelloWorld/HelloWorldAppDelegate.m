@@ -30,6 +30,8 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 	Greeter *greeter = [self greeter];
+	NSLog(@"Greeter: %@", greeter);
+	NSLog(@"This error occurred in %@ at line %d in files %s", NSStringFromSelector(_cmd), __LINE__, __FILE__);
 	NSTextField *label = [self labelWithText:[greeter greeting]];
 	[[self.window contentView] addSubview:label];
 }
