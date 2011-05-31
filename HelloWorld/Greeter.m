@@ -11,7 +11,7 @@
 
 @implementation Greeter
 
-@synthesize name;
+@synthesize name, age, buddy, upperCase;
 
 -(NSString *) greeting {
 	return [[NSString alloc] initWithFormat:@"Hello %@!", self.name];
@@ -24,6 +24,7 @@
 -(id) initWithName: (NSString *) newName {
 	if (self = [super init]) {
 		self.name = newName;
+		self.upperCase = YES;
 	}
 	return self;
 }

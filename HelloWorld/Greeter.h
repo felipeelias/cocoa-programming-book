@@ -11,10 +11,16 @@
 
 @interface Greeter : NSObject {
 	NSString *name;
+	NSInteger age;
+	Greeter *buddy;
+	BOOL *upperCase;
 }
 
 -(NSString *) greeting;
 -(id) initWithName:(NSString *)name;
-@property(copy) NSString *name;
+@property (copy) NSString *name;
+@property (assign, readonly) NSInteger age;
+@property (retain) Greeter *buddy;
+@property (assign, getter=isUppperCase) BOOL *upperCase;
 
 @end
