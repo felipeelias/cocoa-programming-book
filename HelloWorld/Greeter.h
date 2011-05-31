@@ -14,5 +14,6 @@
 }
 
 -(NSString *) greeting;
+-(id) initWithName:(NSString *)newName;
 
 @end

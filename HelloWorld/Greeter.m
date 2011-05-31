@@ -19,11 +19,15 @@
 	return [[NSString alloc] initWithFormat:@"name: %@ \n created: %@", name, [NSDate date]];
 }
 
--(id) init {
+-(id) initWithName: (NSString *) newName {
 	if (self = [super init]) {
-		name = @"Worlds";
+		name = newName;
 	}
 	return self;
+}
+
+-(id) init {
+	return [self initWithName:@"Worlds"];
 }
 
 @end

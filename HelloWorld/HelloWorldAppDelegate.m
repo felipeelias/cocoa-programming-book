@@ -24,12 +24,12 @@
 	return label;
 }
 
-- (Greeter *) greeter {
-	return [[Greeter alloc] init];
+- (Greeter *) greeterFor:(NSString *) personName {
+	return [[Greeter alloc] initWithName:personName];
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-	Greeter *greeter = [self greeter];
+	Greeter *greeter = [self greeterFor:@"Maggie"];
 	NSLog(@"Greeter: %@", greeter);
 	NSLog(@"This error occurred in %@ at line %d in files %s", NSStringFromSelector(_cmd), __LINE__, __FILE__);
 	NSTextField *label = [self labelWithText:[greeter greeting]];
