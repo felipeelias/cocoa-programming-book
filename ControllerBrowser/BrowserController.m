@@ -38,4 +38,10 @@
 	[self loadUrlFrom:self.address];
 }
 
+-(void) webView:(WebView *)sender 
+didReceiveTitle:(NSString *)title 
+	   forFrame:(WebFrame *)frame {
+	[[sender window] setTitle:title];
+}
+
 @end
