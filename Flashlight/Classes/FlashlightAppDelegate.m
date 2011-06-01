@@ -19,7 +19,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
     
-    // Override point for customization after application launch.
+	Greeter *host = [[Greeter alloc] initWithName:@"Maggie"];
+	NSLog(@"Greeter %@", host);
+    
+	// Override point for customization after application launch.
     
     [self.window makeKeyAndVisible];
     
