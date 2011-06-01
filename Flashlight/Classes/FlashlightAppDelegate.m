@@ -21,7 +21,7 @@
     
 	Greeter *host = [[Greeter alloc] initWithName:@"Maggie"];
 	NSLog(@"Greeter %@", host);
-    
+    [host release];
 	// Override point for customization after application launch.
     
     [self.window makeKeyAndVisible];
