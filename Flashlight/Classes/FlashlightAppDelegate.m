@@ -7,6 +7,7 @@
 //
 
 #import "FlashlightAppDelegate.h"
+#import "Greeter.h"
 
 @implementation FlashlightAppDelegate
 
