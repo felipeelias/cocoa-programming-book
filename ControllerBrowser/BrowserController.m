@@ -17,4 +17,12 @@
 	[self.myWebView goBack:sender];
 }
 
+-(IBAction) loadNextPage: (id) sender {
+	[self.myWebView goForward:sender];
+}
+
+-(IBAction) loadUrlFrom: (id) sender {
+	[self.myWebView takeStringURLFrom:sender];
+}
+
 @end

@@ -17,5 +17,7 @@
 @property (assign) IBOutlet WebView *myWebView;
 
 -(IBAction) loadPreviousPage: (id) sender;
+-(IBAction) loadNextPage: (id) sender;
+-(IBAction) loadUrlFrom: (id) sender;
 
 @end
