@@ -15,11 +15,13 @@
 	NSTextField *address;
 	NSButton *backButton;
 	NSButton *forwardButton;
+	NSProgressIndicator *spinner;
 }
 
 @property (assign) IBOutlet WebView *myWebView;
 @property (assign) IBOutlet NSTextField *address;
 @property (assign) IBOutlet NSButton *backButton;
 @property (assign) IBOutlet NSButton *forwardButton;
+@property (assign) IBOutlet NSProgressIndicator *spinner;
 
 @end

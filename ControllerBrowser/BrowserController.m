@@ -11,7 +11,7 @@
 
 @implementation BrowserController
 
-@synthesize myWebView, address, backButton, forwardButton;
+@synthesize myWebView, address, backButton, forwardButton, spinner;
 
 -(void) resetButtons {
 	[self.backButton setEnabled:[self.myWebView canGoBack]];
@@ -31,7 +31,12 @@ didReceiveTitle:(NSString *)title
 
 - (void)webView:(WebView *)sender didFinishLoadForFrame:(WebFrame *)frame {
 	[self.address setStringValue:[sender mainFrameURL]];
+	[self.spinner stopAnimation:self];
 	[self resetButtons];
+}
+
+- (void)webView:(WebView *)sender didStartProvisionalLoadForFrame:(WebFrame *)frame {
+	[self.spinner startAnimation:self];
 }
 
 @end
