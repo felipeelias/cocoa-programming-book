@@ -12,7 +12,6 @@
     NSWindow *window;
 	NSTextField *textField;
 	NSButton *button;
-	BOOL isPersonalized;
 }
 
 @property (assign) IBOutlet NSWindow *window;
