@@ -17,20 +17,21 @@
 	return [[NSString alloc] initWithFormat:@"Hello %@!", self.name];
 }
 
--(NSString *) description {
-	return [[NSString alloc] initWithFormat:@"name: %@ \n created: %@", self.name, [NSDate date]];
-}
-
 -(id) initWithName: (NSString *) newName {
 	if (self = [super init]) {
 		self.name = newName;
 		self.upperCase = YES;
+		self.today = [NSDate date];
 	}
 	return self;
 }
 
 -(id) init {
 	return [self initWithName:@"Worlds"];
+}
+
+-(NSString *) description {
+	return [[NSString alloc] initWithFormat:@"name: %@ \n created: %@", self.name, self.today];
 }
 
 @end
