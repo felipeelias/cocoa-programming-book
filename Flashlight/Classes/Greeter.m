@@ -34,4 +34,10 @@
 	return [[NSString alloc] initWithFormat:@"name: %@ \n created: %@", self.name, self.today];
 }
 
+-(void) dealloc {
+	self.name = nil;
+	self.today = nil;
+	[super dealloc];
+}
+
 @end
