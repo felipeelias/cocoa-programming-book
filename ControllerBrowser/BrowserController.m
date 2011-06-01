@@ -7,13 +7,14 @@
 //
 
 #import "BrowserController.h"
+#import <WebKit/WebKit.h>
 
 @implementation BrowserController
 
 @synthesize myWebView;
 
 -(IBAction) loadPreviousPage: (id) sender {
-	NSLog(@"loadPreviousPage:");
+	[self.myWebView goBack:sender];
 }
 
 @end
