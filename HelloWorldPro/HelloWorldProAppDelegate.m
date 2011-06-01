@@ -19,6 +19,7 @@
 
 - (IBAction) changeGreeting: (id) sender {
 	[self.textField setStringValue:[NSString stringWithFormat:@"Hello %@!", NSFullUserName()]];
+	[sender setHidden:YES];
 }
 
 @end
