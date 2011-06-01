@@ -18,21 +18,9 @@
 	[self.forwardButton setEnabled:[self.myWebView canGoForward]];
 }
 
--(IBAction) loadPreviousPage: (id) sender {
-	[self.myWebView goBack:sender];
-}
-
--(IBAction) loadNextPage: (id) sender {
-	[self.myWebView goForward:sender];
-}
-
--(IBAction) loadUrlFrom: (id) sender {
-	[self.myWebView takeStringURLFrom:sender];
-}
-
 -(void) awakeFromNib {
 	[self.address setStringValue:@"http://google.com"];
-	[self loadUrlFrom:self.address];
+	[self.myWebView takeStringURLFrom:self.address];
 }
 
 -(void) webView:(WebView *)sender 
