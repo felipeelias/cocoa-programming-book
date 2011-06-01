@@ -21,6 +21,6 @@
 @property (copy) NSString *name;
 @property (assign, readonly) NSInteger age;
 @property (retain) Greeter *buddy;
-@property (assign, getter=isUppperCase) BOOL *upperCase;
+@property (assign, getter=isUppperCase) BOOL upperCase;
 
 @end
