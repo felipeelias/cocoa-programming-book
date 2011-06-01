@@ -12,9 +12,11 @@
 
 @interface BrowserController : NSObject {
 	WebView *myWebView;
+	NSTextField *address;
 }
 
 @property (assign) IBOutlet WebView *myWebView;
+@property (assign) IBOutlet NSTextField *address;
 
 -(IBAction) loadPreviousPage: (id) sender;
 -(IBAction) loadNextPage: (id) sender;

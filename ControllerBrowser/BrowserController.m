@@ -11,7 +11,7 @@
 
 @implementation BrowserController
 
-@synthesize myWebView;
+@synthesize myWebView, address;
 
 -(IBAction) loadPreviousPage: (id) sender {
 	[self.myWebView goBack:sender];
@@ -23,6 +23,11 @@
 
 -(IBAction) loadUrlFrom: (id) sender {
 	[self.myWebView takeStringURLFrom:sender];
+}
+
+-(void) awakeFromNib {
+	[self.address setStringValue:@"http://google.com"];
+	[self loadUrlFrom:self.address];
 }
 
 @end
