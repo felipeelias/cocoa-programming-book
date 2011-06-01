@@ -1,0 +1,8 @@
+//
+// Prefix header for all source files of the 'Flashlight' target in the 'Flashlight' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+    #import <UIKit/UIKit.h>
+#endif
