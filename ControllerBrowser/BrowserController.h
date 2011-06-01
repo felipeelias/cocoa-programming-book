@@ -22,8 +22,4 @@
 @property (assign) IBOutlet NSButton *backButton;
 @property (assign) IBOutlet NSButton *forwardButton;
 
--(IBAction) loadPreviousPage: (id) sender;
--(IBAction) loadNextPage: (id) sender;
--(IBAction) loadUrlFrom: (id) sender;
-
 @end
