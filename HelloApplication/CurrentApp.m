@@ -12,17 +12,26 @@
 @implementation CurrentApp
 
 
--(void) reportActivity: (NSNotification *) notification {
-	NSLog(@"%@", notification.name);
+-(void) applicationDidLaunch: (NSNotification *) notification {
+	NSLog(@"Launched.");
+}
+
+-(void) applicationDidTerminate: (NSNotification *) notification {
+	NSLog(@"Terminated.");
+}
+
+- (void) setUpNotification:(NSString *)notification withSelector:(SEL)methodName {
+	[[[NSWorkspace sharedWorkspace] notificationCenter] addObserver:self 
+														   selector:methodName 
+															   name:notification 
+															 object:nil];
 }
 
 - (void) registerNotifications {
-	NSNotificationCenter *defaultCenter = [[NSWorkspace sharedWorkspace] notificationCenter];
-	
-	[defaultCenter addObserver:self 
-					  selector:@selector(reportActivity:) 
-						  name:nil 
-						object:nil];
+	[self setUpNotification:NSWorkspaceDidLaunchApplicationNotification 
+			   withSelector:@selector(applicationDidLaunch:)];
+	[self setUpNotification:NSWorkspaceDidTerminateApplicationNotification 
+			   withSelector:@selector(applicationDidTerminate:)];
 }
 
 - (id) init {
