@@ -10,10 +10,6 @@
 
 
 @interface Greeter : NSObject {
-	NSString *name;
-	NSInteger age;
-	Greeter *buddy;
-	BOOL *upperCase;
 }
 
 -(NSString *) greeting;
