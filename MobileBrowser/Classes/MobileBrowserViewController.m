@@ -35,6 +35,7 @@
 
 -(void)webViewDidFinishLoad:(UIWebView *)theWebView {
 	[self resetButtons:theWebView];
+	self.address.text = [[self.webView.request URL] absoluteString];
 }
 
 -(BOOL) textFieldShouldReturn:(UITextField *)textField {
