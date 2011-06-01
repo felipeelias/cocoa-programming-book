@@ -15,8 +15,8 @@
 -(NSString *) greeting;
 -(id) initWithName:(NSString *)name;
 @property (copy) NSString *name;
-@property (assign, readonly) NSInteger age;
+@property (readonly) NSInteger age;
 @property (retain) Greeter *buddy;
-@property (assign, getter=isUppperCase) BOOL upperCase;
+@property (getter=isUppperCase) BOOL upperCase;
 
 @end
