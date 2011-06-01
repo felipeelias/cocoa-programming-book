@@ -13,12 +13,14 @@
 	UITextField *address;
 	UIBarButtonItem *backButton;
 	UIBarButtonItem *forwardButton;
+	UIActivityIndicatorView *activity;
 }
 
 @property (nonatomic, retain) IBOutlet UIWebView *webView;
 @property (nonatomic, retain) IBOutlet UITextField *address;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *backButton;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *forwardButton;
+@property (nonatomic, retain) IBOutlet UIActivityIndicatorView *activity;
 
 @end
 

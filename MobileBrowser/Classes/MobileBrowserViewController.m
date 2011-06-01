@@ -10,7 +10,7 @@
 
 @implementation MobileBrowserViewController
 
-@synthesize webView, address, backButton, forwardButton;
+@synthesize webView, address, backButton, forwardButton, activity;
 
 -(void) disableWebView { 
 	self.webView.userInteractionEnabled = NO;
@@ -33,36 +33,44 @@
 	[self.forwardButton setEnabled:[theWebView canGoForward]];
 } 
 
--(void)webViewDidFinishLoad:(UIWebView *)theWebView {
-	[self resetButtons:theWebView];
-	self.address.text = [[self.webView.request URL] absoluteString];
-}
-
--(BOOL) textFieldShouldReturn:(UITextField *)textField {
-	[self loadURLFromTextField];
-	[textField resignFirstResponder];
-	[self enableWebView];
-	return YES;
-}
-
 - (void) viewDidLoad {
 	[super viewDidLoad];
 	self.address.text = @"http://google.com";
 	[self loadURLFromTextField];
 }
 
+-(void)webViewDidStartload:(UIWebView *)theWebView {
+	[self.activity startAnimating];
+	[self disableWebView];
+}
+
+-(void)webViewDidFinishLoad:(UIWebView *)theWebView {
+	[self enableWebView];
+	[self.activity stopAnimating];
+	[self resetButtons:theWebView];
+	self.address.text = [[self.webView.request URL] absoluteString];
+}
+
 -(void)textFieldDidBeginEditing:(UITextField *)textField {
 	[self disableWebView];
+}
+
+-(BOOL) textFieldShouldReturn:(UITextField *)textField {
+	[self loadURLFromTextField];
+	[textField resignFirstResponder];
+	return YES;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
-- (void)viewDidUnload {
-}
-
 - (void)dealloc {
+	self.webView = nil;
+	self.address = nil;
+	self.backButton = nil;
+	self.forwardButton = nil;
+	self.activity = nil;
     [super dealloc];
 }
 
