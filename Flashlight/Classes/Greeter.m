@@ -14,7 +14,7 @@
 @synthesize name, age, today, upperCase;
 
 -(NSString *) greeting {
-	return [[[NSString alloc] initWithFormat:@"Hello %@!", self.name] autorelease];
+	return [NSString stringWithFormat:@"Hello %@!", self.name];
 }
 
 -(id) initWithName: (NSString *) newName {
@@ -31,7 +31,7 @@
 }
 
 -(NSString *) description {
-	return [[[NSString alloc] initWithFormat:@"name: %@ \n created: %@", self.name, self.today] autorelease];
+	return [NSString stringWithFormat:@"name: %@ \n created: %@", self.name, self.today];
 }
 
 -(void) dealloc {
