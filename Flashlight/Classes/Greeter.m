@@ -30,6 +30,10 @@
 	return [self initWithName:@"Worlds"];
 }
 
++(id) greeterWithName:(NSString *)newName {
+	return [[[Greeter alloc] initWithName:newName] autorelease];
+}
+
 -(NSString *) description {
 	return [NSString stringWithFormat:@"name: %@ \n created: %@", self.name, self.today];
 }

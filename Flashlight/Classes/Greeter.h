@@ -17,6 +17,9 @@
 
 -(NSString *) greeting;
 -(id) initWithName:(NSString *)name;
+
++(id) greeterWithName: (NSString *) newName;
+
 @property (copy) NSString *name;
 @property (assign, readonly) NSInteger age;
 @property (copy) NSDate *today;
