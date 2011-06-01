@@ -20,17 +20,14 @@
 
 -(IBAction) loadPreviousPage: (id) sender {
 	[self.myWebView goBack:sender];
-	[self resetButtons];
 }
 
 -(IBAction) loadNextPage: (id) sender {
 	[self.myWebView goForward:sender];
-	[self resetButtons];
 }
 
 -(IBAction) loadUrlFrom: (id) sender {
 	[self.myWebView takeStringURLFrom:sender];
-	[self resetButtons];
 }
 
 -(void) awakeFromNib {
@@ -42,6 +39,11 @@
 didReceiveTitle:(NSString *)title 
 	   forFrame:(WebFrame *)frame {
 	[[sender window] setTitle:title];
+}
+
+- (void)webView:(WebView *)sender didFinishLoadForFrame:(WebFrame *)frame {
+	[self.address setStringValue:[sender mainFrameURL]];
+	[self resetButtons];
 }
 
 @end
