@@ -11,11 +11,13 @@
 @interface HelloWorldProAppDelegate : NSObject <NSApplicationDelegate> {
     NSWindow *window;
 	NSTextField *textField;
+	NSButton *button;
 	BOOL isPersonalized;
 }
 
 @property (assign) IBOutlet NSWindow *window;
 @property (assign) IBOutlet NSTextField *textField;
+@property (assign) IBOutlet NSButton *button;
 
 -(IBAction) changeGreeting:(id)sender;
 

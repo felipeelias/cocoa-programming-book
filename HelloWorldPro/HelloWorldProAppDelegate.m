@@ -10,25 +10,29 @@
 
 @implementation HelloWorldProAppDelegate
 
-@synthesize window, textField;
+@synthesize window, textField, button;
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+- (void) personalize {
+	self.window.backgroundColor = [NSColor redColor];
+	[self.textField setStringValue:[NSString stringWithFormat:@"Hello, %@!", NSFullUserName()]];
+	[self.button setTitle:@"Generalize"];
+	isPersonalized = YES;
+}
+
+- (void) generalize {
 	self.window.backgroundColor = [NSColor greenColor];
 	[self.textField setStringValue:@"Hello World!"];
+	[self.button setTitle:@"Personalize"];
+	isPersonalized = NO;
+}
+
+- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+	[self generalize];
 }
 
 - (IBAction) changeGreeting: (id) sender {
-	if (isPersonalized) {
-		self.window.backgroundColor = [NSColor greenColor];
-		[self.textField setStringValue:@"Hello World!"];
-		[sender setTitle:@"Personalize"];
-		isPersonalized = NO;
-	} else {
-		self.window.backgroundColor = [NSColor redColor];
-		[self.textField setStringValue:[NSString stringWithFormat:@"Hello, %@!", NSFullUserName()]];
-		[sender setTitle:@"Generalize"];
-		isPersonalized = YES;
-	}
+	if (isPersonalized) [self generalize];
+	else [self personalize];
 }
 
 @end

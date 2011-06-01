@@ -1334,7 +1334,7 @@
 								<int key="NSCellFlags">-1804468671</int>
 								<int key="NSCellFlags2">138413056</int>
 								<string key="NSContents">test</string>
-								<object class="NSFont" key="NSSupport" id="455391929">
+								<object class="NSFont" key="NSSupport" id="703225307">
 									<string key="NSName">LucidaGrande</string>
 									<double key="NSSize">13</double>
 									<int key="NSfFlags">1044</int>
@@ -1361,18 +1361,18 @@
 								</object>
 							</object>
 						</object>
-						<object class="NSButton" id="1056243585">
+						<object class="NSButton" id="552963090">
 							<reference key="NSNextResponder" ref="439893737"/>
 							<int key="NSvFlags">268</int>
 							<string key="NSFrame">{{192, 282}, {96, 32}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<bool key="NSEnabled">YES</bool>
-							<object class="NSButtonCell" key="NSCell" id="1022832091">
+							<object class="NSButtonCell" key="NSCell" id="209181202">
 								<int key="NSCellFlags">67239424</int>
 								<int key="NSCellFlags2">134217728</int>
 								<string key="NSContents">Change</string>
-								<reference key="NSSupport" ref="455391929"/>
-								<reference key="NSControlView" ref="1056243585"/>
+								<reference key="NSSupport" ref="703225307"/>
+								<reference key="NSControlView" ref="552963090"/>
 								<int key="NSButtonFlags">-2038284033</int>
 								<int key="NSButtonFlags2">129</int>
 								<string key="NSAlternateContents"/>
@@ -2090,9 +2090,17 @@
 					<object class="IBActionConnection" key="connection">
 						<string key="label">changeGreeting:</string>
 						<reference key="source" ref="976324537"/>
-						<reference key="destination" ref="1056243585"/>
+						<reference key="destination" ref="552963090"/>
 					</object>
 					<int key="connectionID">538</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">button</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="552963090"/>
+					</object>
+					<int key="connectionID">539</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -2652,7 +2660,7 @@
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="1056092815"/>
-							<reference ref="1056243585"/>
+							<reference ref="552963090"/>
 						</object>
 						<reference key="parent" ref="972006081"/>
 					</object>
@@ -3158,17 +3166,17 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">536</int>
-						<reference key="object" ref="1056243585"/>
+						<reference key="object" ref="552963090"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="1022832091"/>
+							<reference ref="209181202"/>
 						</object>
 						<reference key="parent" ref="439893737"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">537</int>
-						<reference key="object" ref="1022832091"/>
-						<reference key="parent" ref="1056243585"/>
+						<reference key="object" ref="209181202"/>
+						<reference key="parent" ref="552963090"/>
 					</object>
 				</object>
 			</object>
@@ -3705,7 +3713,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">538</int>
+			<int key="maxID">539</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -3728,11 +3736,13 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>button</string>
 							<string>textField</string>
 							<string>window</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>NSButton</string>
 							<string>NSTextField</string>
 							<string>NSWindow</string>
 						</object>
@@ -3741,11 +3751,16 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>button</string>
 							<string>textField</string>
 							<string>window</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<object class="IBToOneOutletInfo">
+								<string key="name">button</string>
+								<string key="candidateClassName">NSButton</string>
+							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">textField</string>
 								<string key="candidateClassName">NSTextField</string>
