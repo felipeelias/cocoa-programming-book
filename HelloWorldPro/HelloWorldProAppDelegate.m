@@ -17,4 +17,8 @@
 	[self.textField setStringValue:@"Hello World!"];
 }
 
+- (IBAction) changeGreeting: (id) sender {
+	[self.textField setStringValue:[NSString stringWithFormat:@"Hello %@!", NSFullUserName()]];
+}
+
 @end
