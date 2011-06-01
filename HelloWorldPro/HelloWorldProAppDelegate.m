@@ -31,8 +31,7 @@
 }
 
 - (IBAction) changeGreeting: (id) sender {
-	if (isPersonalized) [self generalize];
-	else [self personalize];
+	[self performSelector:NSSelectorFromString([[self.button title] lowercaseString])];
 }
 
 @end
