@@ -11,6 +11,7 @@
 @interface HelloWorldProAppDelegate : NSObject <NSApplicationDelegate> {
     NSWindow *window;
 	NSTextField *textField;
+	BOOL isPersonalized;
 }
 
 @property (assign) IBOutlet NSWindow *window;
