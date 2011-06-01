@@ -10,7 +10,17 @@
 
 @implementation MobileBrowserViewController
 
-@synthesize webView, address;
+@synthesize webView, address, backButton, forwardButton;
+
+-(void) disableWebView { 
+	self.webView.userInteractionEnabled = NO;
+	self.webView.alpha = 0.25;
+}
+
+-(void) enableWebView {
+	self.webView.userInteractionEnabled = YES;
+	self.webView.alpha = 1.0;
+}
 
 - (void) loadURLFromTextField {
 	NSURL *url = [NSURL URLWithString:self.address.text];
@@ -18,10 +28,30 @@
 	[self.webView loadRequest:request];
 }
 
+-(void) resetButtons:(UIWebView *) theWebView { 
+	[self.backButton setEnabled:[theWebView canGoBack]]; 
+	[self.forwardButton setEnabled:[theWebView canGoForward]];
+} 
+
+-(void)webViewDidFinishLoad:(UIWebView *)theWebView {
+	[self resetButtons:theWebView];
+}
+
+-(BOOL) textFieldShouldReturn:(UITextField *)textField {
+	[self loadURLFromTextField];
+	[textField resignFirstResponder];
+	[self enableWebView];
+	return YES;
+}
+
 - (void) viewDidLoad {
 	[super viewDidLoad];
 	self.address.text = @"http://google.com";
 	[self loadURLFromTextField];
+}
+
+-(void)textFieldDidBeginEditing:(UITextField *)textField {
+	[self disableWebView];
 }
 
 - (void)didReceiveMemoryWarning {

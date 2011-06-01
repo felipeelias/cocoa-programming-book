@@ -8,13 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MobileBrowserViewController : UIViewController {
+@interface MobileBrowserViewController : UIViewController <UITextFieldDelegate> {
 	UIWebView *webView;
 	UITextField *address;
+	UIBarButtonItem *backButton;
+	UIBarButtonItem *forwardButton;
 }
 
 @property (nonatomic, retain) IBOutlet UIWebView *webView;
 @property (nonatomic, retain) IBOutlet UITextField *address;
+@property (nonatomic, retain) IBOutlet UIBarButtonItem *backButton;
+@property (nonatomic, retain) IBOutlet UIBarButtonItem *forwardButton;
 
 @end
 
