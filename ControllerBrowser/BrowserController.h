@@ -13,10 +13,14 @@
 @interface BrowserController : NSObject {
 	WebView *myWebView;
 	NSTextField *address;
+	NSButton *backButton;
+	NSButton *forwardButton;
 }
 
 @property (assign) IBOutlet WebView *myWebView;
 @property (assign) IBOutlet NSTextField *address;
+@property (assign) IBOutlet NSButton *backButton;
+@property (assign) IBOutlet NSButton *forwardButton;
 
 -(IBAction) loadPreviousPage: (id) sender;
 -(IBAction) loadNextPage: (id) sender;

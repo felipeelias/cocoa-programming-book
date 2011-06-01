@@ -11,18 +11,26 @@
 
 @implementation BrowserController
 
-@synthesize myWebView, address;
+@synthesize myWebView, address, backButton, forwardButton;
+
+-(void) resetButtons {
+	[self.backButton setEnabled:[self.myWebView canGoBack]];
+	[self.forwardButton setEnabled:[self.myWebView canGoForward]];
+}
 
 -(IBAction) loadPreviousPage: (id) sender {
 	[self.myWebView goBack:sender];
+	[self resetButtons];
 }
 
 -(IBAction) loadNextPage: (id) sender {
 	[self.myWebView goForward:sender];
+	[self resetButtons];
 }
 
 -(IBAction) loadUrlFrom: (id) sender {
 	[self.myWebView takeStringURLFrom:sender];
+	[self resetButtons];
 }
 
 -(void) awakeFromNib {

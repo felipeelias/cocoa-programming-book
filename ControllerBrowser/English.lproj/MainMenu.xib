@@ -1341,7 +1341,7 @@
 							<reference key="NSSuperview" ref="439893737"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="888656027">
-								<int key="NSCellFlags">67239424</int>
+								<int key="NSCellFlags">604110336</int>
 								<int key="NSCellFlags2">134217728</int>
 								<string key="NSContents">Forward</string>
 								<object class="NSFont" key="NSSupport" id="707402183">
@@ -1365,7 +1365,7 @@
 							<reference key="NSSuperview" ref="439893737"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="899708271">
-								<int key="NSCellFlags">67239424</int>
+								<int key="NSCellFlags">604110336</int>
 								<int key="NSCellFlags2">134217728</int>
 								<string key="NSContents">Back</string>
 								<reference key="NSSupport" ref="707402183"/>
@@ -2200,6 +2200,22 @@
 						<reference key="destination" ref="1003152959"/>
 					</object>
 					<int key="connectionID">550</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">backButton</string>
+						<reference key="source" ref="221531206"/>
+						<reference key="destination" ref="495347999"/>
+					</object>
+					<int key="connectionID">551</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">forwardButton</string>
+						<reference key="source" ref="221531206"/>
+						<reference key="destination" ref="1295485"/>
+					</object>
+					<int key="connectionID">552</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -3850,7 +3866,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">550</int>
+			<int key="maxID">552</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -3902,11 +3918,15 @@
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>address</string>
+							<string>backButton</string>
+							<string>forwardButton</string>
 							<string>myWebView</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>NSTextField</string>
+							<string>NSButton</string>
+							<string>NSButton</string>
 							<string>WebView</string>
 						</object>
 					</object>
@@ -3915,6 +3935,8 @@
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>address</string>
+							<string>backButton</string>
+							<string>forwardButton</string>
 							<string>myWebView</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
@@ -3922,6 +3944,14 @@
 							<object class="IBToOneOutletInfo">
 								<string key="name">address</string>
 								<string key="candidateClassName">NSTextField</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">backButton</string>
+								<string key="candidateClassName">NSButton</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">forwardButton</string>
+								<string key="candidateClassName">NSButton</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">myWebView</string>
