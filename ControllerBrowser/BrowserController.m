@@ -8,7 +8,12 @@
 
 #import "BrowserController.h"
 
-
 @implementation BrowserController
+
+@synthesize myWebView;
+
+-(IBAction) loadPreviousPage: (id) sender {
+	NSLog(@"loadPreviousPage:");
+}
 
 @end

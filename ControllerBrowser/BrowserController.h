@@ -8,9 +8,14 @@
 
 #import <Cocoa/Cocoa.h>
 
+@class WebView;
 
 @interface BrowserController : NSObject {
-
+	WebView *myWebView;
 }
+
+@property (assign) IBOutlet WebView *myWebView;
+
+-(IBAction) loadPreviousPage: (id) sender;
 
 @end
