@@ -17,11 +17,14 @@
 #pragma mark -
 #pragma mark Application lifecycle
 
+- (Greeter *) greeterFor:(NSString *) personName {
+	return [[[Greeter alloc] initWithName:personName] autorelease];
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
     
-	Greeter *host = [[Greeter alloc] initWithName:@"Maggie"];
+	Greeter *host = [self greeterFor:@"Maggie"];
 	NSLog(@"Greeter %@", host);
-    [host release];
 	// Override point for customization after application launch.
     
     [self.window makeKeyAndVisible];
