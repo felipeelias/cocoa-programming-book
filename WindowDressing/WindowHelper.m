@@ -16,4 +16,9 @@
 	return NO;
 }
 
+- (BOOL) windowShouldZoom:(NSWindow *)window toFrame:(NSRect)newFrame {
+	[window setBackgroundColor:[NSColor greenColor]];
+	return NO;
+}
+
 @end
