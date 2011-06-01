@@ -10,10 +10,11 @@
 
 @implementation HelloWorldProAppDelegate
 
-@synthesize window;
+@synthesize window, textField;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-	// Insert code here to initialize your application 
+	self.window.backgroundColor = [NSColor greenColor];
+	[self.textField setStringValue:@"Hello World!"];
 }
 
 @end

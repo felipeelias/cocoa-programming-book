@@ -10,8 +10,10 @@
 
 @interface HelloWorldProAppDelegate : NSObject <NSApplicationDelegate> {
     NSWindow *window;
+	NSTextField *textField;
 }
 
 @property (assign) IBOutlet NSWindow *window;
+@property (assign) IBOutlet NSTextField *textField;
 
 @end
