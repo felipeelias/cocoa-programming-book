@@ -10,9 +10,9 @@
 #import "ActivityMonitorDelegate.h"
 
 @interface CurrentApp : NSObject {
-  id delegate;
+  NSObject <ActivityMonitorDelegate> *delegate;
 }
 
-@property id delegate;
+@property IBOutlet NSObject <ActivityMonitorDelegate> *delegate;
 
 @end

@@ -14,15 +14,11 @@
 @synthesize delegate;
 
 -(void) applicationDidLaunch: (NSNotification *) notification {
-  if ([self.delegate respondsToSelector:@selector(applicationDidLaunch:)]) {
-    [self.delegate applicationDidLaunch:self];
-  }
+  [self.delegate applicationDidLaunch:self];
 }
 
 -(void) applicationDidTerminate: (NSNotification *) notification {
-  if ([self.delegate respondsToSelector:@selector(applicationDidTerminate:)]) {
-    [self.delegate applicationDidTerminate:self];
-  }
+  [self.delegate applicationDidTerminate:self];
 }
 
 - (void) setUpNotification:(NSString *)notification withSelector:(SEL)methodName {

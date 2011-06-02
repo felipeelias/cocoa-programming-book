@@ -7,11 +7,10 @@
 //
 
 #import "ActivityController.h"
-#import "CurrentApp.h"
 
 @implementation ActivityController
 
-@synthesize currentApp, activityDisplay;
+@synthesize activityDisplay;
 
 #pragma mark ActivityMonitorDelegate methods
 
@@ -21,13 +20,6 @@
 
 - (void) applicationDidTerminate:(CurrentApp *)app {
   [self.activityDisplay setStringValue:@"Terminated"];
-}
-
-#pragma mark Initialization
-
--(void) awakeFromNib {
-	self.currentApp = [[CurrentApp alloc] init];
-  self.currentApp.delegate = self;
 }
 
 @end

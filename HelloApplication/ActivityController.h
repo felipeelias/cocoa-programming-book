@@ -9,14 +9,10 @@
 #import <Cocoa/Cocoa.h>
 #import "ActivityMonitorDelegate.h"
 
-@class CurrentApp;
-
 @interface ActivityController : NSObject <ActivityMonitorDelegate> {
-	CurrentApp *currentApp;
 	NSTextField *activityDisplay;
 }
 
-@property CurrentApp *currentApp;
 @property IBOutlet NSTextField *activityDisplay;
 
 @end
