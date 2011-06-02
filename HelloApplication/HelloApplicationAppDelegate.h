@@ -12,7 +12,7 @@
 
 @interface HelloApplicationAppDelegate : NSObject <NSApplicationDelegate> {
   NSWindow *window;
-	ActivityController *ac;
+  ActivityController *ac;
 }
 
 @property IBOutlet NSWindow *window;
