@@ -16,12 +16,8 @@
 #pragma mark Utility methods
 
 -(void) respondToChange: (NSNotification *) notification {
-  SEL methodName;
-  if (notification.name == NSWorkspaceDidLaunchApplicationNotification) {
-    methodName = @selector(applicationDidLaunch:);
-  } else {
-    methodName = @selector(applicationDidTerminate:);
-  }
+  SEL methodName = NSSelectorFromString([delegateMethods objectForKey:notification.name]);
+
   if ([self.delegate respondsToSelector:methodName]) {
     self.name = [notification.userInfo objectForKey:@"NSApplicationName"];
     [self.delegate performSelector:methodName withObject:self];
