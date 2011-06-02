@@ -8,11 +8,9 @@
 
 #import <Cocoa/Cocoa.h>
 
-@class CurrentApp;
-
 @protocol ActivityMonitorDelegate
 
--(void)applicationDidLaunch: (CurrentApp *) app;
--(void)applicationDidTerminate: (CurrentApp *) app;
+-(void)applicationDidLaunch: (NSRunningApplication *) app;
+-(void)applicationDidTerminate: (NSRunningApplication *) app;
 
 @end

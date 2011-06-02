@@ -11,7 +11,7 @@
 
 @implementation CurrentApp
 
-@synthesize delegate, name;
+@synthesize delegate, app;
 
 #pragma mark Utility methods
 
@@ -19,8 +19,8 @@
   SEL methodName = NSSelectorFromString([delegateMethods objectForKey:notification.name]);
 
   if ([self.delegate respondsToSelector:methodName]) {
-    self.name = [notification.userInfo objectForKey:@"NSApplicationName"];
-    [self.delegate performSelector:methodName withObject:self];
+    self.app = [notification.userInfo objectForKey:@"NSWorkspaceApplicationKey"];
+    [self.delegate performSelector:methodName withObject:self.app];
   }
   NSLog(@"%@", runningApps);
 }

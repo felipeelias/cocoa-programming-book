@@ -7,20 +7,26 @@
 //
 
 #import "ActivityController.h"
-#import "CurrentApp.h"
 
 @implementation ActivityController
 
-@synthesize activityDisplay;
+@synthesize activityDisplay, imageViewer;
+
+#pragma mark Utility methods
+
+- (void) displayAction: (NSString *) action forApplication:(NSRunningApplication *) app {
+  [self.activityDisplay setStringValue:[NSString stringWithFormat:@"%@: %@", action, app.localizedName]];
+  [self.imageViewer setImage:app.icon];  
+}
 
 #pragma mark ActivityMonitorDelegate methods
 
-- (void) applicationDidLaunch:(CurrentApp *)app {
-  [self.activityDisplay setStringValue:[NSString stringWithFormat:@"Launched: %@", app.name]];
+- (void) applicationDidLaunch:(NSRunningApplication *)app {
+  [self displayAction:@"Launched" forApplication:app];
 }
 
-- (void) applicationDidTerminate:(CurrentApp *)app {
-  [self.activityDisplay setStringValue:[NSString stringWithFormat:@"Terminated: %@", app.name]];
+- (void) applicationDidTerminate:(NSRunningApplication *)app {
+  [self displayAction:@"Terminated" forApplication:app];
 }
 
 @end
