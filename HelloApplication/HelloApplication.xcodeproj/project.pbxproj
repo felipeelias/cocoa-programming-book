@@ -13,6 +13,7 @@
 		4C2998AF1396F9E400170022 /* ActivityController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2998AE1396F9E400170022 /* ActivityController.m */; };
 		4C708FFC13984BAE0024C151 /* ActivityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C708FFB13984BAE0024C151 /* ActivityView.xib */; };
 		4C70900A13984FFF0024C151 /* MyWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C70900913984FFF0024C151 /* MyWindowController.m */; };
+		4C70900C1398503C0024C151 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C70900B1398503C0024C151 /* MainWindow.xib */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -37,6 +38,7 @@
 		4C708FFB13984BAE0024C151 /* ActivityView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityView.xib; sourceTree = "<group>"; };
 		4C70900813984FFF0024C151 /* MyWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyWindowController.h; sourceTree = "<group>"; };
 		4C70900913984FFF0024C151 /* MyWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyWindowController.m; sourceTree = "<group>"; };
+		4C70900B1398503C0024C151 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* HelloApplication-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "HelloApplication-Info.plist"; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* HelloApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -123,6 +125,7 @@
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				1DDD58140DA1D0A300B32029 /* MainMenu.xib */,
 				4C708FFB13984BAE0024C151 /* ActivityView.xib */,
+				4C70900B1398503C0024C151 /* MainWindow.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */,
 				4C708FFC13984BAE0024C151 /* ActivityView.xib in Resources */,
+				4C70900C1398503C0024C151 /* MainWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
