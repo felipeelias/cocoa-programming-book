@@ -7,7 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
-
+#import "ActivityMonitorDelegate.h"
 
 @interface CurrentApp : NSObject {
   id delegate;

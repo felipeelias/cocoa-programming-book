@@ -12,8 +12,6 @@
 
 @protocol ActivityMonitorDelegate
 
-@optional
-
 -(void)applicationDidLaunch: (CurrentApp *) app;
 -(void)applicationDidTerminate: (CurrentApp *) app;
 

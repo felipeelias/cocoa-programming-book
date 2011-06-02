@@ -13,6 +13,18 @@
 
 @synthesize currentApp, activityDisplay;
 
+#pragma mark ActivityMonitorDelegate methods
+
+- (void) applicationDidLaunch:(CurrentApp *)app {
+  [self.activityDisplay setStringValue:@"Launched"];
+}
+
+- (void) applicationDidTerminate:(CurrentApp *)app {
+  [self.activityDisplay setStringValue:@"Terminated"];
+}
+
+#pragma mark Initialization
+
 -(void) awakeFromNib {
 	self.currentApp = [[CurrentApp alloc] init];
   self.currentApp.delegate = self;
