@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import "ActivityMonitorDelegate.h"
 
-@interface ActivityController : NSObject <ActivityMonitorDelegate> {
+@interface ActivityController : NSViewController <ActivityMonitorDelegate> {
 	NSTextField *activityDisplay;
   NSImageView *imageViewer;
 }
