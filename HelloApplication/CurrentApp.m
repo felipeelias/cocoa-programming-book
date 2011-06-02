@@ -13,11 +13,11 @@
 
 
 -(void) applicationDidLaunch: (NSNotification *) notification {
-	NSLog(@"Launched.");
+	[[NSNotificationCenter defaultCenter] postNotificationName:@"Launch" object:self];
 }
 
 -(void) applicationDidTerminate: (NSNotification *) notification {
-	NSLog(@"Terminated.");
+	[[NSNotificationCenter defaultCenter] postNotificationName:@"Terminated" object:self];
 }
 
 - (void) setUpNotification:(NSString *)notification withSelector:(SEL)methodName {

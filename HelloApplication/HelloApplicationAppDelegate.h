@@ -11,7 +11,7 @@
 @class ActivityController;
 
 @interface HelloApplicationAppDelegate : NSObject <NSApplicationDelegate> {
-    NSWindow *window;
+  NSWindow *window;
 	ActivityController *ac;
 }
 
