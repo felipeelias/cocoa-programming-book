@@ -20,7 +20,9 @@
 }
 
 - (void)drawRect:(NSRect)dirtyRect {
-    // Drawing code here.
+  NSRect innerRect = NSMakeRect(18, 42, 180, 180);
+  [[NSColor blueColor] set];
+  [NSBezierPath fillRect:innerRect];
 }
 
 @end
