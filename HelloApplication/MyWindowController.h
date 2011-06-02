@@ -8,9 +8,14 @@
 
 #import <Cocoa/Cocoa.h>
 
+@class CurrentApp, ActivityController;
 
 @interface MyWindowController : NSWindowController {
-
+  CurrentApp *app;
+  ActivityController *ac;
 }
+
+@property IBOutlet CurrentApp *app;
+@property IBOutlet ActivityController *ac;
 
 @end
