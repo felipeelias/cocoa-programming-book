@@ -11,13 +11,15 @@
 
 @implementation CurrentApp
 
-@synthesize delegate;
+@synthesize delegate, name;
 
 -(void) applicationDidLaunch: (NSNotification *) notification {
+  self.name = [notification.userInfo objectForKey:@"NSApplicationName"];
   [self.delegate applicationDidLaunch:self];
 }
 
 -(void) applicationDidTerminate: (NSNotification *) notification {
+  self.name = [notification.userInfo objectForKey:@"NSApplicationName"];
   [self.delegate applicationDidTerminate:self];
 }
 

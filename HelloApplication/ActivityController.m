@@ -7,6 +7,7 @@
 //
 
 #import "ActivityController.h"
+#import "CurrentApp.h"
 
 @implementation ActivityController
 
@@ -15,11 +16,11 @@
 #pragma mark ActivityMonitorDelegate methods
 
 - (void) applicationDidLaunch:(CurrentApp *)app {
-  [self.activityDisplay setStringValue:@"Launched"];
+  [self.activityDisplay setStringValue:[NSString stringWithFormat:@"Launched: %@", app.name]];
 }
 
 - (void) applicationDidTerminate:(CurrentApp *)app {
-  [self.activityDisplay setStringValue:@"Terminated"];
+  [self.activityDisplay setStringValue:[NSString stringWithFormat:@"Terminated: %@", app.name]];
 }
 
 @end
