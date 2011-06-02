@@ -13,14 +13,29 @@
 
 @synthesize delegate, name;
 
+#pragma mark Utility methods
+
+-(void) respondToChange: (NSNotification *) notification {
+  SEL methodName;
+  if (notification.name == NSWorkspaceDidLaunchApplicationNotification) {
+    methodName = @selector(applicationDidLaunch:);
+  } else {
+    methodName = @selector(applicationDidTerminate:);
+  }
+  if ([self.delegate respondsToSelector:methodName]) {
+    self.name = [notification.userInfo objectForKey:@"NSApplicationName"];
+    [self.delegate performSelector:methodName withObject:self];
+  }
+}
+
+#pragma mark Notification methods
+
 -(void) applicationDidLaunch: (NSNotification *) notification {
-  self.name = [notification.userInfo objectForKey:@"NSApplicationName"];
-  [self.delegate applicationDidLaunch:self];
+  [self respondToChange:notification];
 }
 
 -(void) applicationDidTerminate: (NSNotification *) notification {
-  self.name = [notification.userInfo objectForKey:@"NSApplicationName"];
-  [self.delegate applicationDidTerminate:self];
+  [self respondToChange:notification];
 }
 
 - (void) setUpNotification:(NSString *)notification withSelector:(SEL)methodName {
@@ -36,6 +51,8 @@
 	[self setUpNotification:NSWorkspaceDidTerminateApplicationNotification 
 			   withSelector:@selector(applicationDidTerminate:)];
 }
+
+#pragma mark Initialisation
 
 - (id) init {
 	if (self = [super init]) {
