@@ -11,6 +11,7 @@
 
 @implementation CurrentApp
 
+@synthesize delegate;
 
 -(void) applicationDidLaunch: (NSNotification *) notification {
 	[[NSNotificationCenter defaultCenter] postNotificationName:@"Launch" object:self];

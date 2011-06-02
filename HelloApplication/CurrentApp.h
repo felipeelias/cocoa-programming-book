@@ -10,7 +10,9 @@
 
 
 @interface CurrentApp : NSObject {
-
+  id delegate;
 }
+
+@property id delegate;
 
 @end
