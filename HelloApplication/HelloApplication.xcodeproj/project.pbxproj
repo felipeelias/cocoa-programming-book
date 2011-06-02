@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
 		256AC3DA0F4B6AC300CF3369 /* HelloApplicationAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 256AC3D90F4B6AC300CF3369 /* HelloApplicationAppDelegate.m */; };
+		4C19AB001398561700E610F2 /* IconView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C19AAFF1398561700E610F2 /* IconView.xib */; };
+		4C19AB031398563A00E610F2 /* IconViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C19AB021398563A00E610F2 /* IconViewController.m */; };
+		4C19AB10139856CB00E610F2 /* IconView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C19AB0F139856CB00E610F2 /* IconView.m */; };
 		4C2998AB1396F9CD00170022 /* CurrentApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2998AA1396F9CD00170022 /* CurrentApp.m */; };
 		4C2998AF1396F9E400170022 /* ActivityController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2998AE1396F9E400170022 /* ActivityController.m */; };
 		4C708FFC13984BAE0024C151 /* ActivityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C708FFB13984BAE0024C151 /* ActivityView.xib */; };
@@ -30,6 +33,11 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		4C19AAFF1398561700E610F2 /* IconView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IconView.xib; sourceTree = "<group>"; };
+		4C19AB011398563A00E610F2 /* IconViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IconViewController.h; sourceTree = "<group>"; };
+		4C19AB021398563A00E610F2 /* IconViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IconViewController.m; sourceTree = "<group>"; };
+		4C19AB0E139856CB00E610F2 /* IconView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IconView.h; sourceTree = "<group>"; };
+		4C19AB0F139856CB00E610F2 /* IconView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IconView.m; sourceTree = "<group>"; };
 		4C2998A91396F9CD00170022 /* CurrentApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentApp.h; sourceTree = "<group>"; };
 		4C2998AA1396F9CD00170022 /* CurrentApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentApp.m; sourceTree = "<group>"; };
 		4C2998AD1396F9E400170022 /* ActivityController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityController.h; sourceTree = "<group>"; };
@@ -67,6 +75,10 @@
 				4C708E4D139819EB0024C151 /* ActivityMonitorDelegate.h */,
 				4C70900813984FFF0024C151 /* MyWindowController.h */,
 				4C70900913984FFF0024C151 /* MyWindowController.m */,
+				4C19AB011398563A00E610F2 /* IconViewController.h */,
+				4C19AB021398563A00E610F2 /* IconViewController.m */,
+				4C19AB0E139856CB00E610F2 /* IconView.h */,
+				4C19AB0F139856CB00E610F2 /* IconView.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -126,6 +138,7 @@
 				1DDD58140DA1D0A300B32029 /* MainMenu.xib */,
 				4C708FFB13984BAE0024C151 /* ActivityView.xib */,
 				4C70900B1398503C0024C151 /* MainWindow.xib */,
+				4C19AAFF1398561700E610F2 /* IconView.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -193,6 +206,7 @@
 				1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */,
 				4C708FFC13984BAE0024C151 /* ActivityView.xib in Resources */,
 				4C70900C1398503C0024C151 /* MainWindow.xib in Resources */,
+				4C19AB001398561700E610F2 /* IconView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,6 +222,8 @@
 				4C2998AB1396F9CD00170022 /* CurrentApp.m in Sources */,
 				4C2998AF1396F9E400170022 /* ActivityController.m in Sources */,
 				4C70900A13984FFF0024C151 /* MyWindowController.m in Sources */,
+				4C19AB031398563A00E610F2 /* IconViewController.m in Sources */,
+				4C19AB10139856CB00E610F2 /* IconView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
