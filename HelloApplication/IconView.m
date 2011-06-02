@@ -23,6 +23,9 @@
   NSRect innerRect = NSMakeRect(18, 42, 180, 180);
   [[NSColor blueColor] set];
   [NSBezierPath fillRect:innerRect];
+  [[NSColor blackColor] set];
+  [NSBezierPath setDefaultLineWidth:12];
+  [NSBezierPath strokeRect:innerRect];
 }
 
 @end
