@@ -11,4 +11,11 @@
 
 @implementation MyWindowController
 
+- (id) initWithWindowNibName:(NSString *)windowNibName {
+  if (self = [super initWithWindowNibName:windowNibName]) {
+    [self showWindow:self];
+  }
+  return self;
+}
+
 @end
