@@ -12,6 +12,8 @@
 @interface CurrentApp : NSObject {
   NSObject <ActivityMonitorDelegate> *delegate;
   NSString *name;
+  NSDictionary *delegateMethods;
+  NSMutableDictionary *runningApps;
 }
 
 @property IBOutlet NSObject <ActivityMonitorDelegate> *delegate;

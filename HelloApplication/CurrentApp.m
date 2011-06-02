@@ -26,15 +26,18 @@
     self.name = [notification.userInfo objectForKey:@"NSApplicationName"];
     [self.delegate performSelector:methodName withObject:self];
   }
+  NSLog(@"%@", runningApps);
 }
 
 #pragma mark Notification methods
 
 -(void) applicationDidLaunch: (NSNotification *) notification {
+  [runningApps setObject:[NSDate date] forKey:[notification.userInfo objectForKey:@"NSApplicationName"]];
   [self respondToChange:notification];
 }
 
 -(void) applicationDidTerminate: (NSNotification *) notification {
+  [runningApps removeObjectForKey:[notification.userInfo objectForKey:@"NSApplicationName"]];
   [self respondToChange:notification];
 }
 
@@ -52,11 +55,22 @@
 			   withSelector:@selector(applicationDidTerminate:)];
 }
 
-#pragma mark Initialisation
+#pragma mark Initialization
+
+- (void) initalizeMethodDictionary {
+  delegateMethods = [[NSDictionary alloc] initWithObjectsAndKeys:
+                     @"applicationDidLaunch:", 
+                     NSWorkspaceDidLaunchApplicationNotification,
+                     @"applicationDidTerminate:",
+                     NSWorkspaceDidTerminateApplicationNotification,
+                     nil];
+}
 
 - (id) init {
 	if (self = [super init]) {
 		[self registerNotifications];
+    [self initalizeMethodDictionary];
+    runningApps = [[NSMutableDictionary alloc] initWithCapacity:5];
 	}
 	return self;
 }
