@@ -8,8 +8,9 @@
 
 #import "IconView.h"
 
-
 @implementation IconView
+
+@synthesize alertColor;
 
 - (id)initWithFrame:(NSRect)frame {
     self = [super initWithFrame:frame];
@@ -20,12 +21,13 @@
 }
 
 - (void)drawRect:(NSRect)dirtyRect {
-  NSRect innerRect = NSMakeRect(18, 42, 180, 180);
-  [[NSColor blueColor] set];
-  [NSBezierPath fillRect:innerRect];
-  [[NSColor blackColor] set];
+  [self.alertColor set];
+  [NSBezierPath strokeRect:frameRect];
+}
+
+- (void) awakeFromNib {
+  frameRect = NSMakeRect(18, 42, 180, 180);
   [NSBezierPath setDefaultLineWidth:12];
-  [NSBezierPath strokeRect:innerRect];
 }
 
 @end

@@ -10,7 +10,10 @@
 
 
 @interface IconView : NSView {
-
+  NSColor *alertColor;
+  NSRect frameRect;
 }
+
+@property (copy) NSColor *alertColor;
 
 @end
