@@ -7,12 +7,14 @@
 //
 
 #import "HelloApplicationAppDelegate.h"
+#import "ActivityController.h"
 
 @implementation HelloApplicationAppDelegate
 
 @synthesize window, ac, app;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+  self.window.contentView = ac.view;
 }
 
 @end
