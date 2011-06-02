@@ -31,6 +31,7 @@
 		4C2998AA1396F9CD00170022 /* CurrentApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentApp.m; sourceTree = "<group>"; };
 		4C2998AD1396F9E400170022 /* ActivityController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityController.h; sourceTree = "<group>"; };
 		4C2998AE1396F9E400170022 /* ActivityController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityController.m; sourceTree = "<group>"; };
+		4C708E4D139819EB0024C151 /* ActivityMonitorDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityMonitorDelegate.h; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* HelloApplication-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "HelloApplication-Info.plist"; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* HelloApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -56,6 +57,7 @@
 				4C2998AA1396F9CD00170022 /* CurrentApp.m */,
 				4C2998AD1396F9E400170022 /* ActivityController.h */,
 				4C2998AE1396F9E400170022 /* ActivityController.m */,
+				4C708E4D139819EB0024C151 /* ActivityMonitorDelegate.h */,
 			);
 			name = Classes;
 			sourceTree = "<group>";

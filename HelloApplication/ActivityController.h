@@ -7,10 +7,11 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "ActivityMonitorDelegate.h"
 
 @class CurrentApp;
 
-@interface ActivityController : NSObject {
+@interface ActivityController : NSObject <ActivityMonitorDelegate> {
 	CurrentApp *currentApp;
 	NSTextField *activityDisplay;
 }
