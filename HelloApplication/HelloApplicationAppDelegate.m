@@ -7,14 +7,12 @@
 //
 
 #import "HelloApplicationAppDelegate.h"
-#import "ActivityController.h"
+#import "MyWindowController.h"
 
 @implementation HelloApplicationAppDelegate
 
-@synthesize window, ac, app;
-
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-  self.window.contentView = ac.view;
+  [[MyWindowController alloc] initWithWindowNibName:@"MainWindow"];
 }
 
 @end
