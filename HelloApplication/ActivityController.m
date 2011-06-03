@@ -18,4 +18,13 @@
 - (void) applicationDidTerminate:(NSRunningApplication *)app {
 }
 
+#pragma mark Table related methods
+
+- (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView {
+  return 100;
+}
+
+- (id) tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)rowIndex {
+  return [NSString stringWithFormat:@"Row = %d", rowIndex];
+}
 @end
