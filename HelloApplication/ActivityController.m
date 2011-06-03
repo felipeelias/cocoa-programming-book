@@ -10,14 +10,18 @@
 
 @implementation ActivityController
 
-@synthesize runningApps;
+@synthesize runningApps, table;
 
 #pragma mark ActivityMonitorDelegate methods
 
 - (void) applicationDidLaunch:(NSRunningApplication *)app {
+  [self.runningApps addObject:app];
+  [self.table reloadData];
 }
 
 - (void) applicationDidTerminate:(NSRunningApplication *)app {
+  [self.runningApps removeObject:app];
+  [self.table reloadData];
 }
 
 #pragma mark Table related methods

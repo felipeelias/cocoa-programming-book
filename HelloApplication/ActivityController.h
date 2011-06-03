@@ -11,8 +11,10 @@
 
 @interface ActivityController : NSViewController <ActivityMonitorDelegate, NSTableViewDelegate, NSTableViewDataSource> {
   NSMutableArray *runningApps;
+  NSTableView *table;
 }
 
 @property (retain) NSMutableArray *runningApps;
+@property IBOutlet NSTableView *table;
 
 @end
