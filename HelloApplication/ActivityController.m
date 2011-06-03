@@ -54,9 +54,13 @@
 
 - (id) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
   if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-    self.runningApps = [NSMutableArray arrayWithCapacity:20];
-    [self.runningApps addObjectsFromArray:[[NSWorkspace sharedWorkspace] runningApplications]];
     self.banishedApps = [[BanishedApps alloc] init];
+    self.runningApps = [NSMutableArray arrayWithCapacity:20];
+    for (NSRunningApplication *app in [[NSWorkspace sharedWorkspace] runningApplications]) {
+      if (![self.banishedApps contains:app]) {
+        [self.runningApps addObject:app];
+      }
+    }
   }
   return self;
 }

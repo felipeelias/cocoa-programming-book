@@ -40,8 +40,12 @@
 
 - (id) init {
   if (self = [super init]) {
-    self.apps = [NSMutableArray arrayWithCapacity:5];
     [self setSupportFile];
+    if ([[NSFileManager defaultManager] fileExistsAtPath:self.dataFile]) {
+      self.apps = [NSMutableArray arrayWithContentsOfFile:self.dataFile];
+    } else {
+      self.apps = [NSMutableArray arrayWithCapacity:5];
+    }
   }
   return self;
 }
