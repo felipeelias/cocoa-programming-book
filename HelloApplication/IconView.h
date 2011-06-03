@@ -16,6 +16,7 @@
   NSImageView *imageView;
   NSString *appName;
   NSRect textRect;
+  NSMutableDictionary *textAttributes;
 }
 
 @property (copy) NSColor *alertColor;

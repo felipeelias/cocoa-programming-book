@@ -24,7 +24,7 @@
   [self.alertColor set];
   [NSBezierPath strokeRect:frameRect];
   [self.imageView.image setSize:imageRect.size];
-  [self.appName drawInRect:textRect withAttributes:nil];
+  [self.appName drawInRect:textRect withAttributes:textAttributes];
 }
 
 - (void) awakeFromNib {
@@ -33,6 +33,17 @@
   imageRect = NSMakeRect(36, 66, 144, 144);
   self.imageView = [[NSImageView alloc] initWithFrame:imageRect];
   textRect = NSMakeRect(36, 10, 144, 20);
+  NSMutableParagraphStyle *par = [[NSMutableParagraphStyle alloc] init];
+  [par setAlignment:NSCenterTextAlignment];
+  textAttributes = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
+                    [NSColor blueColor], 
+                    NSForegroundColorAttributeName, 
+                    par, 
+                    NSParagraphStyleAttributeName, 
+                    [NSFont boldSystemFontOfSize:12], 
+                    NSFontAttributeName, 
+                    nil];
+  
   [self addSubview:self.imageView];
 }
 
