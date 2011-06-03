@@ -10,7 +10,7 @@
 
 @implementation IconView
 
-@synthesize alertColor;
+@synthesize alertColor, imageView;
 
 - (id)initWithFrame:(NSRect)frame {
     self = [super initWithFrame:frame];
@@ -23,11 +23,15 @@
 - (void)drawRect:(NSRect)dirtyRect {
   [self.alertColor set];
   [NSBezierPath strokeRect:frameRect];
+  [self.imageView.image setSize:imageRect.size];
 }
 
 - (void) awakeFromNib {
   frameRect = NSMakeRect(18, 42, 180, 180);
   [NSBezierPath setDefaultLineWidth:12];
+  imageRect = NSMakeRect(36, 66, 144, 144);
+  self.imageView = [[NSImageView alloc] initWithFrame:imageRect];
+  [self addSubview:self.imageView];
 }
 
 @end

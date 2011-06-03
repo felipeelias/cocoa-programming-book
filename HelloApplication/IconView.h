@@ -12,8 +12,11 @@
 @interface IconView : NSView {
   NSColor *alertColor;
   NSRect frameRect;
+  NSRect imageRect;
+  NSImageView *imageView;
 }
 
 @property (copy) NSColor *alertColor;
+@property NSImageView *imageView;
 
 @end

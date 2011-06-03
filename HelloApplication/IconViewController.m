@@ -11,13 +11,22 @@
 
 @implementation IconViewController
 
+#pragma mark Utility methods
+
+- (void) displayColor: (NSColor *) color for: (NSRunningApplication *) app {
+  ((IconView *) self.view).alertColor = color;
+  ((IconView *) self.view).imageView.image = app.icon;
+}
+
+#pragma mark ActivityMonitorDelegate protocol
+
 - (void) applicationDidLaunch:(NSRunningApplication *)app {
-  ((IconView *) self.view).alertColor = [NSColor greenColor];
+  [self displayColor:[NSColor greenColor] for:app];
   [self.view setNeedsDisplay:YES];
 }
 
 - (void) applicationDidTerminate:(NSRunningApplication *)app {
-  ((IconView *) self.view).alertColor = [NSColor redColor];
+  [self displayColor:[NSColor redColor] for:app];
   [self.view setNeedsDisplay:YES];
 }
 
