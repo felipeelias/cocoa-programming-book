@@ -9,13 +9,17 @@
 #import <Cocoa/Cocoa.h>
 #import "ActivityMonitorDelegate.h"
 
+@class BanishedApps;
+
 @interface ActivityController : NSViewController <ActivityMonitorDelegate, NSTableViewDelegate, NSTableViewDataSource> {
   NSMutableArray *runningApps;
   NSTableView *table;
   NSButton *deleteButton;
+  BanishedApps *banishedApps;
 }
 
 @property (retain) NSMutableArray *runningApps;
+@property BanishedApps *banishedApps;
 @property IBOutlet NSTableView *table;
 @property IBOutlet NSButton *deleteButton;
 

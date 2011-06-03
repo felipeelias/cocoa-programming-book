@@ -7,14 +7,16 @@
 //
 
 #import "ActivityController.h"
+#import "BanishedApps.h"
 
 @implementation ActivityController
 
-@synthesize runningApps, table, deleteButton;
+@synthesize runningApps, table, deleteButton, banishedApps;
 
 #pragma mark ActivityMonitorDelegate methods
 
 - (void) applicationDidLaunch:(NSRunningApplication *)app {
+  if ([self.banishedApps contains:app]) return;
   [self.runningApps addObject:app];
   [self.table reloadData];
 }
@@ -41,6 +43,7 @@
 #pragma mark Remove Button
 
 - (IBAction) removeRow: (id) sender {
+  [self.banishedApps add:[self.runningApps objectAtIndex:[self.table selectedRow]]];
   [self.runningApps removeObjectAtIndex:[self.table selectedRow]];
   [self.table deselectAll:nil];
   [self.table reloadData];
@@ -53,6 +56,7 @@
   if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
     self.runningApps = [NSMutableArray arrayWithCapacity:20];
     [self.runningApps addObjectsFromArray:[[NSWorkspace sharedWorkspace] runningApplications]];
+    self.banishedApps = [[BanishedApps alloc] init];
   }
   return self;
 }
