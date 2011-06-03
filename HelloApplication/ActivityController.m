@@ -34,6 +34,10 @@
   return [[runningApps objectAtIndex:rowIndex] valueForKey:[aTableColumn identifier]];
 }
 
+- (void) tableViewSelectionDidChange:(NSNotification *)notification {
+  [self.deleteButton setEnabled:YES];
+}
+
 #pragma mark Remove Button
 
 - (IBAction) removeRow: (id) sender {
