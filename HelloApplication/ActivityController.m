@@ -41,6 +41,10 @@
 #pragma mark Remove Button
 
 - (IBAction) removeRow: (id) sender {
+  [self.runningApps removeObjectAtIndex:[self.table selectedRow]];
+  [self.table deselectAll:nil];
+  [self.table reloadData];
+  [self.deleteButton setEnabled:NO];
 }
 
 #pragma mark Initialization
