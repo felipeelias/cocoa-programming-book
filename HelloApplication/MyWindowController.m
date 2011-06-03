@@ -8,14 +8,14 @@
 
 #import "MyWindowController.h"
 #import "CurrentApp.h"
-#import "IconViewController.h"
+#import "ActivityController.h"
 
 @implementation MyWindowController
 
 @synthesize app, ac;
 
 - (void) setUpView {
-  self.ac = [[IconViewController alloc] initWithNibName:@"IconView" bundle:nil];
+  self.ac = [[ActivityController alloc] initWithNibName:@"ActivityView" bundle:nil];
   self.app = [[CurrentApp alloc] init];
   self.app.delegate = self.ac;
   [self.window setContentSize:[self.ac.view bounds].size];
