@@ -11,9 +11,11 @@
 
 @interface BanishedApps : NSObject {
   NSMutableArray *apps;
+  NSString *dataFile;
 }
 
 @property (retain) NSMutableArray *apps;
+@property (copy) NSString *dataFile;
 
 - (void) add:(NSRunningApplication *) app;
 - (BOOL) contains:(NSRunningApplication *) app;
