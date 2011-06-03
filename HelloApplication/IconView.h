@@ -14,9 +14,12 @@
   NSRect frameRect;
   NSRect imageRect;
   NSImageView *imageView;
+  NSString *appName;
+  NSRect textRect;
 }
 
 @property (copy) NSColor *alertColor;
 @property NSImageView *imageView;
+@property (copy) NSString *appName;
 
 @end

@@ -16,6 +16,7 @@
 - (void) displayColor: (NSColor *) color for: (NSRunningApplication *) app {
   ((IconView *) self.view).alertColor = color;
   ((IconView *) self.view).imageView.image = app.icon;
+  ((IconView *) self.view).appName = app.localizedName;
 }
 
 #pragma mark ActivityMonitorDelegate protocol
