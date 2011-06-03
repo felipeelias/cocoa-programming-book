@@ -10,7 +10,7 @@
 
 @implementation ActivityController
 
-@synthesize runningApps, table;
+@synthesize runningApps, table, deleteButton;
 
 #pragma mark ActivityMonitorDelegate methods
 
@@ -32,6 +32,11 @@
 
 - (id) tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)rowIndex {
   return [[runningApps objectAtIndex:rowIndex] valueForKey:[aTableColumn identifier]];
+}
+
+#pragma mark Remove Button
+
+- (IBAction) removeRow: (id) sender {
 }
 
 #pragma mark Initialization
