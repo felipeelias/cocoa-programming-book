@@ -9,7 +9,10 @@
 #import <Cocoa/Cocoa.h>
 #import "ActivityMonitorDelegate.h"
 
-@interface ActivityController : NSViewController <ActivityMonitorDelegate> {
+@interface ActivityController : NSViewController <ActivityMonitorDelegate, NSTableViewDelegate, NSTableViewDataSource> {
+  NSMutableArray *runningApps;
 }
+
+@property (retain) NSMutableArray *runningApps;
 
 @end

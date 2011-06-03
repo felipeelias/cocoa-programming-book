@@ -10,6 +10,8 @@
 
 @implementation ActivityController
 
+@synthesize runningApps;
+
 #pragma mark ActivityMonitorDelegate methods
 
 - (void) applicationDidLaunch:(NSRunningApplication *)app {
@@ -21,10 +23,21 @@
 #pragma mark Table related methods
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView {
-  return 100;
+  return [runningApps count];
 }
 
 - (id) tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)rowIndex {
-  return [NSString stringWithFormat:@"Row = %d", rowIndex];
+  return [[runningApps objectAtIndex:rowIndex] localizedName];
 }
+
+#pragma mark Initialization
+
+- (id) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+  if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
+    self.runningApps = [NSMutableArray arrayWithCapacity:20];
+    [self.runningApps addObjectsFromArray:[[NSWorkspace sharedWorkspace] runningApplications]];
+  }
+  return self;
+}
+
 @end
