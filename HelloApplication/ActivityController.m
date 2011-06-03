@@ -27,7 +27,7 @@
 }
 
 - (id) tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)rowIndex {
-  return [[runningApps objectAtIndex:rowIndex] localizedName];
+  return [[runningApps objectAtIndex:rowIndex] performSelector:NSSelectorFromString([aTableColumn identifier])];
 }
 
 #pragma mark Initialization
