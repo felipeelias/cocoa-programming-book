@@ -12,13 +12,7 @@
 
 @synthesize alertColor, imageView, appName;
 
-- (id)initWithFrame:(NSRect)frame {
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code here.
-    }
-    return self;
-}
+#pragma mark Drawing methods
 
 - (void)drawRect:(NSRect)dirtyRect {
   [self.alertColor set];
@@ -27,11 +21,18 @@
   [self.appName drawInRect:textRect withAttributes:textAttributes];
 }
 
-- (void) awakeFromNib {
+- (void) setUpFrameRect {
   frameRect = NSMakeRect(18, 42, 180, 180);
   [NSBezierPath setDefaultLineWidth:12];
+}
+
+- (void) setUpImageView {
   imageRect = NSMakeRect(36, 66, 144, 144);
   self.imageView = [[NSImageView alloc] initWithFrame:imageRect];
+  [self addSubview:self.imageView];
+}
+
+- (void) setUpTextView {
   textRect = NSMakeRect(36, 10, 144, 20);
   NSMutableParagraphStyle *par = [[NSMutableParagraphStyle alloc] init];
   [par setAlignment:NSCenterTextAlignment];
@@ -43,8 +44,22 @@
                     [NSFont boldSystemFontOfSize:12], 
                     NSFontAttributeName, 
                     nil];
-  
-  [self addSubview:self.imageView];
+}
+
+#pragma mark Initialization
+
+- (id)initWithFrame:(NSRect)frame {
+  self = [super initWithFrame:frame];
+  if (self) {
+    // Initialization code here.
+  }
+  return self;
+}
+
+- (void) awakeFromNib {
+  [self setUpFrameRect];
+  [self setUpImageView];
+  [self setUpTextView];
 }
 
 @end
