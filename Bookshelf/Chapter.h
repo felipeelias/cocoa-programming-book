@@ -1,6 +1,5 @@
-
 //
-//  PragBook.h
+//  Chapter.h
 //  Bookshelf
 //
 //  Created by Felipe Elias Philipp on 04/06/2011.
@@ -9,15 +8,13 @@
 
 #import <Cocoa/Cocoa.h>
 
-@class Chapter;
 
-@interface PragBook : NSObject {
+@interface Chapter : NSObject {
   NSString *title;
-  NSString *author;
-  Chapter *chapter;
+  NSNumber *pageCount;
 }
 
-@property (copy) NSString *title, *author;
-@property Chapter *chapter;
+@property (copy) NSString *title;
+@property (copy) NSNumber *pageCount;
 
 @end

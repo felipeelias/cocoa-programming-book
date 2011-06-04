@@ -12,6 +12,7 @@
 		4C068EE9139A73600006434C /* PragBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C068EE8139A73600006434C /* PragBook.m */; };
 		4C068EEE139A74660006434C /* BookshelfController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C068EED139A74660006434C /* BookshelfController.m */; };
 		4C068EFB139A76810006434C /* Bookshelf.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C068EFA139A76810006434C /* Bookshelf.xib */; };
+		4C2510C3139AC23100364EDF /* Chapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2510C2139AC23100364EDF /* Chapter.m */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -33,6 +34,8 @@
 		4C068EEC139A74660006434C /* BookshelfController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookshelfController.h; sourceTree = "<group>"; };
 		4C068EED139A74660006434C /* BookshelfController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookshelfController.m; sourceTree = "<group>"; };
 		4C068EFA139A76810006434C /* Bookshelf.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Bookshelf.xib; sourceTree = "<group>"; };
+		4C2510C1139AC23100364EDF /* Chapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Chapter.h; sourceTree = "<group>"; };
+		4C2510C2139AC23100364EDF /* Chapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Chapter.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Bookshelf-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Bookshelf-Info.plist"; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Bookshelf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bookshelf.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -58,6 +61,8 @@
 				4C068EE8139A73600006434C /* PragBook.m */,
 				4C068EEC139A74660006434C /* BookshelfController.h */,
 				4C068EED139A74660006434C /* BookshelfController.m */,
+				4C2510C1139AC23100364EDF /* Chapter.h */,
+				4C2510C2139AC23100364EDF /* Chapter.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -196,6 +201,7 @@
 				256AC3DA0F4B6AC300CF3369 /* BookshelfAppDelegate.m in Sources */,
 				4C068EE9139A73600006434C /* PragBook.m in Sources */,
 				4C068EEE139A74660006434C /* BookshelfController.m in Sources */,
+				4C2510C3139AC23100364EDF /* Chapter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
