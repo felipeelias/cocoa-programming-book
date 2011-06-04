@@ -15,4 +15,9 @@
   [[MyWindowController alloc] initWithWindowNibName:@"MainWindow"];
 }
 
++ (void) initialize {
+  NSDictionary *defaults = [NSDictionary dictionaryWithObject:@"YES" forKey:@"LoadSavedRemovedApps"];
+  [[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
+}
+
 @end

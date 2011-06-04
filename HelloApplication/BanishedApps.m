@@ -13,6 +13,12 @@
 
 @synthesize apps, dataFile;
 
+#pragma mark Preference methods
+
+- (BOOL) shouldLoadSavedRemovedApps {
+  return [[NSUserDefaults standardUserDefaults] boolForKey:@"LoadSavedRemovedApps"];
+}
+
 #pragma mark Collection methods
 
 - (BOOL) contains:(NSRunningApplication *)app {
@@ -41,7 +47,7 @@
 - (id) init {
   if (self = [super init]) {
     [self setSupportFile];
-    if ([[NSFileManager defaultManager] fileExistsAtPath:self.dataFile]) {
+    if ([self shouldLoadSavedRemovedApps] && [[NSFileManager defaultManager] fileExistsAtPath:self.dataFile]) {
       self.apps = [NSMutableArray arrayWithContentsOfFile:self.dataFile];
     } else {
       self.apps = [NSMutableArray arrayWithCapacity:5];
