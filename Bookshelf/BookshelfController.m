@@ -11,10 +11,15 @@
 
 @implementation BookshelfController
 
-@synthesize valueField, book;
+@synthesize valueField, keyField, book;
 
 - (IBAction) getValue: (id) sender {
   [self.valueField setStringValue:[self.book valueForKey:[sender stringValue]]];
+}
+
+- (IBAction) setValue: (id) sender {
+  [self.book setValue:[sender stringValue] 
+               forKey:[self.keyField stringValue]];
 }
 
 - (PragBook *) book {
