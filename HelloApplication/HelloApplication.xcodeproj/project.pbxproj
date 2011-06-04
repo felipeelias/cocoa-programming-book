@@ -147,6 +147,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4C068DEC139A5E050006434C /* Views.plist */,
 				8D1107310486CEB800E47090 /* HelloApplication-Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				1DDD58140DA1D0A300B32029 /* MainMenu.xib */,
@@ -154,7 +155,6 @@
 				4C70900B1398503C0024C151 /* MainWindow.xib */,
 				4C19AAFF1398561700E610F2 /* IconView.xib */,
 				4C068D5E139A52480006434C /* Preferences.xib */,
-				4C068DEC139A5E050006434C /* Views.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";

@@ -23,23 +23,16 @@
   [self.ac applicationDidLaunch:[NSRunningApplication currentApplication]];
 }
 
-- (void) loadIconView {
-  self.ac = [[IconViewController alloc] initWithNibName:@"IconView" bundle:nil];
-}
-
-- (void) loadTableView {
-  self.ac = [[ActivityController alloc] initWithNibName:@"ActivityView" bundle:nil];
-}
-
-- (BOOL) shouldLoadIconView {
-  return (1 == [[[NSUserDefaults standardUserDefaults] objectForKey:@"TagForView"] intValue]);
+- (void) loadView {
+  NSArray *viewArray = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Views" ofType:@"plist"]];
+  NSDictionary *view = [viewArray objectAtIndex:[[[NSUserDefaults standardUserDefaults] objectForKey:@"TagForView"] intValue]];
+  self.ac = [[NSClassFromString([view objectForKey:@"class"]) alloc] initWithNibName:[view objectForKey:@"nib"] bundle:nil];
+  [self setUpView];
 }
 
 - (id) initWithWindowNibName:(NSString *)windowNibName {
   if (self = [super initWithWindowNibName:windowNibName]) {
-    if ([self shouldLoadIconView]) [self loadIconView];
-    else [self loadTableView];
-    [self setUpView];
+    [self loadView];
     [self showWindow:self];
   }
   return self;
