@@ -13,11 +13,9 @@
 @interface CounterAppDelegate : NSObject <NSApplicationDelegate> {
   NSWindow *window;
   Display *display;
-  Logger *logger;
 }
 
 @property (assign) IBOutlet NSWindow *window;
 @property IBOutlet Display *display;
-@property IBOutlet Logger *logger;
 
 @end

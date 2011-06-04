@@ -7,20 +7,17 @@
 //
 
 #import "UpOrDown.h"
-#import "Display.h"
 
 @implementation UpOrDown
 
-- (IBAction) step: (id) sender {
-  [self setValue:[NSNumber numberWithInteger:[sender integerValue]] forKey:@"count"]; // => when property is not defined, use this (alternative with KVO
-  
-  // alternative solution (WITHOUT @property count defined)
-  //[self willChangeValueForKey:@"count"];
-  //count = [NSNumber numberWithInteger:[sender integerValue]];
-  //[self didChangeValueForKey:@"count"];
+@synthesize countOne, countTwo;
 
-  // alternative solution (WITH @property count defined)
-  //count = [NSNumber numberWithInteger:[sender integerValue]];
+- (IBAction) stepOne: (id) sender {
+  self.countOne = [NSNumber numberWithInteger:[sender integerValue]];
+}
+
+- (IBAction) stepTwo: (id) sender {
+  self.countTwo = [NSNumber numberWithInteger:[sender integerValue]];
 }
 
 @end

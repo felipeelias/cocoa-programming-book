@@ -11,21 +11,30 @@
 
 @implementation Display
 
-- (void) updateDisplay:(NSNumber *)newValue {
-  [displayField setIntegerValue:[newValue integerValue]];
+- (void) updateDisplayOne:(NSNumber *)newValue {
+  [displayFieldOne setIntegerValue:[newValue integerValue]];
+}
+
+- (void) updateDisplayTwo:(NSNumber *)newValue {
+  [displayFieldTwo setIntegerValue:[newValue integerValue]];
 }
 
 - (void) observeValueForKeyPath:(NSString *)keypath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-  // calls the @"count" keyPath from UpOrDown object
-  [self updateDisplay:[object valueForKeyPath:keypath]];
+  if ([keypath isEqualToString:@"countOne"]) {
+    [self updateDisplayOne:[object valueForKeyPath:keypath]];
+  } else {
+    [self updateDisplayTwo:[object valueForKeyPath:keypath]];
+  }
 }
 
 - (void) awakeFromNib {
-  [counter addObserver:self forKeyPath:@"count" options:NSKeyValueObservingOptionNew context:NULL];
+  [counter addObserver:self forKeyPath:@"countOne" options:NSKeyValueObservingOptionNew context:NULL];
+  [counter addObserver:self forKeyPath:@"countTwo" options:NSKeyValueObservingOptionNew context:NULL];
 }
 
 - (void) finalize {
-  [counter removeObserver:self forKeyPath:@"count"];
+  [counter removeObserver:self forKeyPath:@"countOne"];
+  [counter removeObserver:self forKeyPath:@"countTwo"];
   [super finalize];
 }
 

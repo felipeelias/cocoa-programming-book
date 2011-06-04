@@ -10,7 +10,7 @@
 
 @implementation CounterAppDelegate
 
-@synthesize window, display, logger;
+@synthesize window, display;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 	// Insert code here to initialize your application 

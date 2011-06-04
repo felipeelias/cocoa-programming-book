@@ -11,7 +11,7 @@
 @class UpOrDown;
 
 @interface Display : NSObject {
-  IBOutlet NSTextField *displayField;
+  IBOutlet NSTextField *displayFieldOne, *displayFieldTwo;
   IBOutlet UpOrDown *counter;
 }
 
