@@ -9,10 +9,10 @@
 #import <Cocoa/Cocoa.h>
 
 @interface UpOrDown : NSObject {
-  NSNumber *countOne, *countTwo;
+  NSNumber *countOne, *countTwo, *totalCount;
 }
 
-@property (copy) NSNumber *countOne, *countTwo;
+@property (copy) NSNumber *countOne, *countTwo, *totalCount;
 
 - (IBAction) stepOne: (id) sender;
 - (IBAction) stepTwo: (id) sender;
