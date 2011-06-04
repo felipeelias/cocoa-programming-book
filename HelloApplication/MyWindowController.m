@@ -9,13 +9,13 @@
 #import "MyWindowController.h"
 #import "CurrentApp.h"
 #import "ActivityController.h"
+#import "IconViewController.h"
 
 @implementation MyWindowController
 
 @synthesize app, ac;
 
 - (void) setUpView {
-  self.ac = [[ActivityController alloc] initWithNibName:@"ActivityView" bundle:nil];
   self.app = [[CurrentApp alloc] init];
   self.app.delegate = self.ac;
   [self.window setContentSize:[self.ac.view bounds].size];
@@ -23,8 +23,22 @@
   [self.ac applicationDidLaunch:[NSRunningApplication currentApplication]];
 }
 
+- (void) loadIconView {
+  self.ac = [[IconViewController alloc] initWithNibName:@"IconView" bundle:nil];
+}
+
+- (void) loadTableView {
+  self.ac = [[ActivityController alloc] initWithNibName:@"ActivityView" bundle:nil];
+}
+
+- (BOOL) shouldLoadIconView {
+  return (1 == [[[NSUserDefaults standardUserDefaults] objectForKey:@"TagForView"] intValue]);
+}
+
 - (id) initWithWindowNibName:(NSString *)windowNibName {
   if (self = [super initWithWindowNibName:windowNibName]) {
+    if ([self shouldLoadIconView]) [self loadIconView];
+    else [self loadTableView];
     [self setUpView];
     [self showWindow:self];
   }
