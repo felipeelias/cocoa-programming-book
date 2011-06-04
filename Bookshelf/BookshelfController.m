@@ -25,8 +25,8 @@
 - (PragBook *) book {
   if (!book) {
     self.book = [[PragBook alloc] init];
-    self.book.title = @"Manage Your Project Portifolio";
-    self.book.author = @"Johanna Rothman";
+    NSDictionary *bookInfo = [NSDictionary dictionaryWithObjectsAndKeys:@"Manage Your Project Portifolio", @"title", @"Johanna Rothman", @"author", nil];
+    [self.book setValuesForKeysWithDictionary:bookInfo];
   }
   return book;
 }
