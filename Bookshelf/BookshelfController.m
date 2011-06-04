@@ -21,6 +21,14 @@
   return [[self.book.chapters objectAtIndex:rowIndex] valueForKey:[aTableColumn identifier]];
 }
 
+- (void) createReport {
+  NSLog(@"There are %@ chapters.", [self valueForKeyPath:@"book.chapters.@count"]);
+  NSLog(@"The titles are: %@", [self.book.chapters valueForKey:@"title"]);
+  NSLog(@"This book has %@ pages so far.", [self.book valueForKeyPath:@"chapters.@sum.pageCount"]);
+  NSLog(@"The longest chapter is %@ pages long.", [self valueForKeyPath:@"book.chapters.@max.pageCount"]);
+  NSLog(@"The average chapter length is %@.", [self.book.chapters valueForKeyPath:@"@avg.pageCount"]);
+}
+
 - (PragBook *) book {
   if (!book) {
     self.book = [[PragBook alloc] init];

@@ -17,6 +17,7 @@
 	BookshelfController *bc = [[BookshelfController alloc] initWithNibName:@"Bookshelf" bundle:nil];
   [self.window setContentSize:[bc.view bounds].size];
   self.window.contentView = bc.view;
+  [bc createReport];
 }
 
 @end

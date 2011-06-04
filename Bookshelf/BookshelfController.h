@@ -16,4 +16,6 @@
 
 @property PragBook *book;
 
+- (void) createReport;
+
 @end
