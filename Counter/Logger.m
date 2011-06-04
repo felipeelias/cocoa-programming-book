@@ -1,23 +1,22 @@
 //
-//  Display.m
+//  Logger.m
 //  Counter
 //
-//  Created by Felipe Elias Philipp on 04/06/2011.
+//  Created by Felipe Elias Philipp on 05/06/2011.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "Display.h"
-#import "UpOrDown.h"
+#import "Logger.h"
 
-@implementation Display
 
-- (void) updateDisplay:(NSNumber *)newValue {
-  [displayField setIntegerValue:[newValue integerValue]];
+@implementation Logger
+
+- (void) logValue: (NSNumber *) value {
+  NSLog(@"Value changed: %@", value);
 }
 
 - (void) observeValueForKeyPath:(NSString *)keypath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-  // calls the @"count" keyPath from UpOrDown object
-  [self updateDisplay:[object valueForKeyPath:keypath]];
+  [self logValue:[object valueForKeyPath:keypath]];
 }
 
 - (void) awakeFromNib {

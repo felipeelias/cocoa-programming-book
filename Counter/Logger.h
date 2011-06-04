@@ -1,8 +1,8 @@
 //
-//  Display.h
+//  Logger.h
 //  Counter
 //
-//  Created by Felipe Elias Philipp on 04/06/2011.
+//  Created by Felipe Elias Philipp on 05/06/2011.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
@@ -10,8 +10,7 @@
 
 @class UpOrDown;
 
-@interface Display : NSObject {
-  IBOutlet NSTextField *displayField;
+@interface Logger : NSObject {
   IBOutlet UpOrDown *counter;
 }
 

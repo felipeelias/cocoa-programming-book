@@ -8,10 +8,16 @@
 
 #import <Cocoa/Cocoa.h>
 
+@class Display, Logger;
+
 @interface CounterAppDelegate : NSObject <NSApplicationDelegate> {
-    NSWindow *window;
+  NSWindow *window;
+  Display *display;
+  Logger *logger;
 }
 
 @property (assign) IBOutlet NSWindow *window;
+@property IBOutlet Display *display;
+@property IBOutlet Logger *logger;
 
 @end

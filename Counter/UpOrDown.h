@@ -8,10 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 
-@class Display;
-
 @interface UpOrDown : NSObject {
-  IBOutlet Display *display;
+  NSNumber *count;
 }
 
 - (IBAction) step: (id) sender;
