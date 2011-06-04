@@ -15,12 +15,17 @@
 
 @synthesize app, ac;
 
+- (void) launchOrTerminate {
+  if ([[[NSWorkspace sharedWorkspace] runningApplications] containsObject:self.app.app]) {
+    [self.ac applicationDidLaunch:self.app.app];
+  } else [self.ac applicationDidTerminate:self.app.app];
+}
+
 - (void) setUpView {
-  self.app = [[CurrentApp alloc] init];
   self.app.delegate = self.ac;
   [self.window setContentSize:[self.ac.view bounds].size];
+  [self launchOrTerminate];
   self.window.contentView = self.ac.view;
-  [self.ac applicationDidLaunch:[NSRunningApplication currentApplication]];
 }
 
 - (IBAction) loadTableView: (id) sender {
@@ -50,6 +55,13 @@
 
 - (id) init {
   return [self initWithWindowNibName:@"MainWindow"];
+}
+
+- (CurrentApp *) app {
+  if (!app) {
+    self.app = [[CurrentApp alloc] init];
+  }
+  return app;
 }
 
 @end

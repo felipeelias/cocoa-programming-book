@@ -67,6 +67,7 @@
 		[self registerNotifications];
     [self initalizeMethodDictionary];
     runningApps = [[NSMutableDictionary alloc] initWithCapacity:5];
+    self.app = [NSRunningApplication currentApplication];
 	}
 	return self;
 }
