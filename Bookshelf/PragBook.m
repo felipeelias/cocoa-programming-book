@@ -13,4 +13,8 @@
 
 @synthesize title, author;
 
+- (id) valueForUndefinedKey:(NSString *)key {
+  return [NSString stringWithFormat:@"No property for key %@", key];
+}
+
 @end
