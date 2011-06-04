@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
 		256AC3DA0F4B6AC300CF3369 /* HelloApplicationAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 256AC3D90F4B6AC300CF3369 /* HelloApplicationAppDelegate.m */; };
+		4C068D5F139A52480006434C /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C068D5E139A52480006434C /* Preferences.xib */; };
+		4C068D66139A52DB0006434C /* PreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C068D65139A52DB0006434C /* PreferencesController.m */; };
 		4C19AB001398561700E610F2 /* IconView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C19AAFF1398561700E610F2 /* IconView.xib */; };
 		4C19AB031398563A00E610F2 /* IconViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C19AB021398563A00E610F2 /* IconViewController.m */; };
 		4C19AB10139856CB00E610F2 /* IconView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C19AB0F139856CB00E610F2 /* IconView.m */; };
@@ -34,6 +36,9 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		4C068D5E139A52480006434C /* Preferences.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Preferences.xib; sourceTree = "<group>"; };
+		4C068D64139A52DB0006434C /* PreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesController.h; sourceTree = "<group>"; };
+		4C068D65139A52DB0006434C /* PreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesController.m; sourceTree = "<group>"; };
 		4C19AAFF1398561700E610F2 /* IconView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IconView.xib; sourceTree = "<group>"; };
 		4C19AB011398563A00E610F2 /* IconViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IconViewController.h; sourceTree = "<group>"; };
 		4C19AB021398563A00E610F2 /* IconViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IconViewController.m; sourceTree = "<group>"; };
@@ -84,6 +89,8 @@
 				4C19AB0F139856CB00E610F2 /* IconView.m */,
 				4CAFB05913993333008EDD40 /* BanishedApps.h */,
 				4CAFB05A13993333008EDD40 /* BanishedApps.m */,
+				4C068D64139A52DB0006434C /* PreferencesController.h */,
+				4C068D65139A52DB0006434C /* PreferencesController.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -144,6 +151,7 @@
 				4C708FFB13984BAE0024C151 /* ActivityView.xib */,
 				4C70900B1398503C0024C151 /* MainWindow.xib */,
 				4C19AAFF1398561700E610F2 /* IconView.xib */,
+				4C068D5E139A52480006434C /* Preferences.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -212,6 +220,7 @@
 				4C708FFC13984BAE0024C151 /* ActivityView.xib in Resources */,
 				4C70900C1398503C0024C151 /* MainWindow.xib in Resources */,
 				4C19AB001398561700E610F2 /* IconView.xib in Resources */,
+				4C068D5F139A52480006434C /* Preferences.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,6 +239,7 @@
 				4C19AB031398563A00E610F2 /* IconViewController.m in Sources */,
 				4C19AB10139856CB00E610F2 /* IconView.m in Sources */,
 				4CAFB05B13993333008EDD40 /* BanishedApps.m in Sources */,
+				4C068D66139A52DB0006434C /* PreferencesController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
