@@ -11,10 +11,13 @@
 
 @interface PreferencesController : NSWindowController {
   NSButton *loadSavedRemovedAppsCheckbox;
+  NSMatrix *viewGroup;
 }
 
 @property IBOutlet NSButton *loadSavedRemovedAppsCheckbox;
+@property IBOutlet NSMatrix *viewGroup;
 
 - (IBAction) toggleLoadSavedRemovedAppsCheckbox: (id) sender;
+- (IBAction) chooseView: (id) sender;
 
 @end

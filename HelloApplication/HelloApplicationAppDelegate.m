@@ -22,7 +22,7 @@
 }
 
 + (void) initialize {
-  NSDictionary *defaults = [NSDictionary dictionaryWithObject:@"YES" forKey:@"LoadSavedRemovedApps"];
+  NSDictionary *defaults = [NSDictionary dictionaryWithObjectsAndKeys:@"NO", @"LoadSavedRemovedApps", [NSNumber numberWithInt:1], @"TagForView", nil];
   [[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
 }
 
