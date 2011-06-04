@@ -19,4 +19,7 @@
 @property IBOutlet CurrentApp *app;
 @property IBOutlet NSViewController <ActivityMonitorDelegate> *ac;
 
+- (IBAction) loadTableView: (id) sender;
+- (IBAction) loadIconView: (id) sender;
+
 @end

@@ -23,6 +23,16 @@
   [self.ac applicationDidLaunch:[NSRunningApplication currentApplication]];
 }
 
+- (IBAction) loadTableView: (id) sender {
+  self.ac = [[ActivityController alloc] initWithNibName:@"ActivityView" bundle:nil];
+  [self setUpView];
+}
+
+- (IBAction) loadIconView: (id) sender {
+  self.ac = [[IconViewController alloc] initWithNibName:@"IconView" bundle:nil];
+  [self setUpView];
+}
+
 - (void) loadView {
   NSArray *viewArray = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Views" ofType:@"plist"]];
   NSDictionary *view = [viewArray objectAtIndex:[[[NSUserDefaults standardUserDefaults] objectForKey:@"TagForView"] intValue]];
