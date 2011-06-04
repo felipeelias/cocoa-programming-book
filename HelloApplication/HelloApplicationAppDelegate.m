@@ -13,7 +13,6 @@
 @implementation HelloApplicationAppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-  [[MyWindowController alloc] initWithWindowNibName:@"MainWindow"];
 }
 
 - (IBAction) openPreferences: (id) sender {

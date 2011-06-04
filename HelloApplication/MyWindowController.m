@@ -38,4 +38,8 @@
   return self;
 }
 
+- (id) init {
+  return [self initWithWindowNibName:@"MainWindow"];
+}
+
 @end
