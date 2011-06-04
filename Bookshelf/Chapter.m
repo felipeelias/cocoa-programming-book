@@ -17,4 +17,18 @@
   return [NSString stringWithFormat:@"No property for key %@", key];
 }
 
+-(id) initWithTitle:(NSString *) chapterTitle pageCount: (int) count { 
+  if (self=[super init]) {
+    self.title = chapterTitle;
+    self.pageCount = [NSNumber numberWithInt:count];
+  }
+  return self;
+}
+
++ (id) chapterWithTitle: (NSString *) title pageCount: (int) count {
+  return [[Chapter alloc] initWithTitle:title pageCount:count];
+}
+
+
+
 @end

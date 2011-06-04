@@ -17,4 +17,6 @@
 @property (copy) NSString *title;
 @property (copy) NSNumber *pageCount;
 
++ (id) chapterWithTitle:(NSString *)title pageCount:(int)count;
+
 @end

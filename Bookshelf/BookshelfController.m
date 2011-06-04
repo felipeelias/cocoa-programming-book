@@ -11,15 +11,14 @@
 
 @implementation BookshelfController
 
-@synthesize valueField, keyField, book;
+@synthesize book;
 
-- (IBAction) getValue: (id) sender {
-  [self.valueField setStringValue:[self.book valueForKeyPath:[sender stringValue]]];
+- (NSInteger) numberOfRowsInTableView:(NSTableView *)table {
+  return [self.book.chapters count];
 }
 
-- (IBAction) setValue: (id) sender {
-  [self.book setValue:[sender stringValue] 
-           forKeyPath:[self.keyField stringValue]];
+- (id)tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)rowIndex {
+  return [[self.book.chapters objectAtIndex:rowIndex] valueForKey:[aTableColumn identifier]];
 }
 
 - (PragBook *) book {
@@ -27,10 +26,6 @@
     self.book = [[PragBook alloc] init];
     NSDictionary *bookInfo = [NSDictionary dictionaryWithObjectsAndKeys:@"Manage Your Project Portifolio", @"title", @"Johanna Rothman", @"author", nil];
     [self.book setValuesForKeysWithDictionary:bookInfo];
-    [self.book setValue:@"Preface" 
-             forKeyPath:@"chapter.title"];
-    [self setValue:[NSNumber numberWithInt:4] 
-        forKeyPath:@"book.chapter.pageCount"];
   }
   return book;
 }

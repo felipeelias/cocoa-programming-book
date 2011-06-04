@@ -14,10 +14,10 @@
 @interface PragBook : NSObject {
   NSString *title;
   NSString *author;
-  Chapter *chapter;
+  NSArray *chapters;
 }
 
 @property (copy) NSString *title, *author;
-@property Chapter *chapter;
+@property (copy) NSArray *chapters;
 
 @end

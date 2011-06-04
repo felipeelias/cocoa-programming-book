@@ -11,15 +11,9 @@
 @class PragBook;
 
 @interface BookshelfController : NSViewController {
-  NSTextField *keyField;
-  NSTextField *valueField;
   PragBook *book;
 }
 
-@property IBOutlet NSTextField *valueField, *keyField;
 @property PragBook *book;
-
-- (IBAction) getValue: (id) sender;
-- (IBAction) setValue: (id) sender;
 
 @end
