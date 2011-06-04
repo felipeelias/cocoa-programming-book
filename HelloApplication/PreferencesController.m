@@ -17,6 +17,10 @@
   [[NSUserDefaults standardUserDefaults] setBool:[self.loadSavedRemovedAppsCheckbox state] forKey:@"LoadSavedRemovedApps"];
 }
 
+- (void) windowWillClose: (NSNotification *) notification {
+  [self autorelease];
+}
+
 - (void) awakeFromNib {
   [self.loadSavedRemovedAppsCheckbox setState:[[NSUserDefaults standardUserDefaults] boolForKey:@"LoadSavedRemovedApps"]];
 }

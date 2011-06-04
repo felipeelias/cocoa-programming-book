@@ -11,4 +11,6 @@
 @interface HelloApplicationAppDelegate : NSObject <NSApplicationDelegate> {
 }
 
+- (IBAction) openPreferences: (id) sender;
+
 @end

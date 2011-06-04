@@ -8,11 +8,17 @@
 
 #import "HelloApplicationAppDelegate.h"
 #import "MyWindowController.h"
+#import "PreferencesController.h"
 
 @implementation HelloApplicationAppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
   [[MyWindowController alloc] initWithWindowNibName:@"MainWindow"];
+}
+
+- (IBAction) openPreferences: (id) sender {
+  PreferencesController *prefController = [[PreferencesController alloc] initWithWindowNibName:@"Preferences"];
+  [prefController showWindow:self];
 }
 
 + (void) initialize {
