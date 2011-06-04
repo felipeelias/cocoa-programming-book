@@ -11,6 +11,7 @@
 		256AC3DA0F4B6AC300CF3369 /* HelloApplicationAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 256AC3D90F4B6AC300CF3369 /* HelloApplicationAppDelegate.m */; };
 		4C068D5F139A52480006434C /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C068D5E139A52480006434C /* Preferences.xib */; };
 		4C068D66139A52DB0006434C /* PreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C068D65139A52DB0006434C /* PreferencesController.m */; };
+		4C068DED139A5E050006434C /* Views.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C068DEC139A5E050006434C /* Views.plist */; };
 		4C19AB001398561700E610F2 /* IconView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C19AAFF1398561700E610F2 /* IconView.xib */; };
 		4C19AB031398563A00E610F2 /* IconViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C19AB021398563A00E610F2 /* IconViewController.m */; };
 		4C19AB10139856CB00E610F2 /* IconView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C19AB0F139856CB00E610F2 /* IconView.m */; };
@@ -39,6 +40,7 @@
 		4C068D5E139A52480006434C /* Preferences.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Preferences.xib; sourceTree = "<group>"; };
 		4C068D64139A52DB0006434C /* PreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesController.h; sourceTree = "<group>"; };
 		4C068D65139A52DB0006434C /* PreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesController.m; sourceTree = "<group>"; };
+		4C068DEC139A5E050006434C /* Views.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Views.plist; sourceTree = "<group>"; };
 		4C19AAFF1398561700E610F2 /* IconView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IconView.xib; sourceTree = "<group>"; };
 		4C19AB011398563A00E610F2 /* IconViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IconViewController.h; sourceTree = "<group>"; };
 		4C19AB021398563A00E610F2 /* IconViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IconViewController.m; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				4C70900B1398503C0024C151 /* MainWindow.xib */,
 				4C19AAFF1398561700E610F2 /* IconView.xib */,
 				4C068D5E139A52480006434C /* Preferences.xib */,
+				4C068DEC139A5E050006434C /* Views.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 				4C70900C1398503C0024C151 /* MainWindow.xib in Resources */,
 				4C19AB001398561700E610F2 /* IconView.xib in Resources */,
 				4C068D5F139A52480006434C /* Preferences.xib in Resources */,
+				4C068DED139A5E050006434C /* Views.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

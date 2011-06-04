@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>class</key>
+		<string>ActivityController</string>
+		<key>nib</key>
+		<string>ActivityView</string>
+	</dict>
+	<dict>
+		<key>class</key>
+		<string>IconViewController</string>
+		<key>nib</key>
+		<string>IconView</string>
+	</dict>
+</array>
+</plist>
