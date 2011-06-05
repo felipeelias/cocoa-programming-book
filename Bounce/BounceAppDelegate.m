@@ -9,13 +9,27 @@
 #import "BounceAppDelegate.h"
 #import "NSSet+Persistence.h"
 
+@interface BounceAppDelegate()
+-(void) createSetOnDisk;
+-(void) setFromDisk;
+@end
+
+
 @implementation BounceAppDelegate
 
 @synthesize window;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+  [self createSetOnDisk];
+  [self setFromDisk];
+}
+
+- (void) createSetOnDisk {
 	NSSet *source = [NSSet setWithObjects:@"One", @"Two", nil];
   [source writeToFile:@"savedSet" atomically:YES];
+}
+
+- (void) setFromDisk {
   NSSet *fromDisk = [NSSet setWithContentsOfFile:@"savedSet"];
   NSLog(@"%@", fromDisk);
 }
