@@ -7,6 +7,7 @@
     NSPersistentStoreCoordinator *persistentStoreCoordinator;
     NSManagedObjectModel *managedObjectModel;
     NSManagedObjectContext *managedObjectContext;
+  NSArray *sortDescriptors;
 }
 
 @property (nonatomic, retain) IBOutlet NSWindow *window;
@@ -15,6 +16,7 @@
 @property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;
 @property (nonatomic, retain, readonly) NSManagedObjectContext *managedObjectContext;
 
+@property (copy) NSArray *sortDescriptors;
 - (IBAction)saveAction:sender;
 
 @end

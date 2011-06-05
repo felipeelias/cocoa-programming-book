@@ -2,7 +2,7 @@
 
 @implementation CDBookshelf_AppDelegate
 
-@synthesize window;
+@synthesize window, sortDescriptors;
 
 /**
     Returns the support directory for the application, used to store the Core Data
@@ -200,5 +200,8 @@
     [super dealloc];
 }
 
+- (void) applicationDidFinishLaunching: (NSNotification *) notification {
+  self.sortDescriptors = [NSArray arrayWithObject:[[NSSortDescriptor alloc] initWithKey:@"chapterNumber" ascending:YES]];
+}
 
 @end
