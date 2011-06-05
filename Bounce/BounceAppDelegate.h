@@ -10,8 +10,10 @@
 
 @interface BounceAppDelegate : NSObject <NSApplicationDelegate> {
     NSWindow *window;
+  NSSet *retrievedSet;
 }
 
+@property (readonly) NSSet *retrievedSet;
 @property (assign) IBOutlet NSWindow *window;
 
 @end

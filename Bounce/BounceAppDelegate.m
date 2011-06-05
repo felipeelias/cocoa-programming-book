@@ -12,16 +12,18 @@
 @interface BounceAppDelegate()
 -(void) createSetOnDisk;
 -(void) setFromDisk;
+@property (copy) NSSet *retrievedSet;
 @end
 
 
 @implementation BounceAppDelegate
 
-@synthesize window;
+@synthesize window, retrievedSet;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
   [self createSetOnDisk];
   [self setFromDisk];
+  NSLog(@"%@", self.retrievedSet);
 }
 
 - (void) createSetOnDisk {
@@ -30,8 +32,7 @@
 }
 
 - (void) setFromDisk {
-  NSSet *fromDisk = [NSSet setWithContentsOfFile:@"savedSet"];
-  NSLog(@"%@", fromDisk);
+  self.retrievedSet = [NSSet setWithContentsOfFile:@"savedSet"];
 }
 
 @end
