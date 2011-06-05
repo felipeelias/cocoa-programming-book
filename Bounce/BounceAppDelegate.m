@@ -7,6 +7,7 @@
 //
 
 #import "BounceAppDelegate.h"
+#import "NSSet+Persistence.h"
 
 @implementation BounceAppDelegate
 
