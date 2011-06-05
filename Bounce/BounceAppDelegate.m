@@ -13,9 +13,9 @@
 @synthesize window;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-	NSArray *source = [NSArray arrayWithObjects:@"One", @"Two", nil];
-  [source writeToFile:@"savedArray" atomically:YES];
-  NSArray *fromDisk = [NSArray arrayWithContentsOfFile:@"savedArray"];
+	NSSet *source = [NSSet setWithObjects:@"One", @"Two", nil];
+  [source writeToFile:@"savedSet" atomically:YES];
+  NSSet *fromDisk = [NSSet setWithContentsOfFile:@"savedSet"];
   NSLog(@"%@", fromDisk);
 }
 
