@@ -10,6 +10,7 @@
 		2F7446990DB6B7EA00F9684A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F7446970DB6B7EA00F9684A /* MainMenu.xib */; };
 		4C6CD6AA139D78620049B917 /* PragBook+Report.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6CD6A9139D78620049B917 /* PragBook+Report.m */; };
 		4C6CD6AF139D7A5C0049B917 /* PragBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6CD6AE139D7A5C0049B917 /* PragBook.m */; };
+		4C6CD6EA139D7C0D0049B917 /* NSManagedObject+Report.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6CD6E9139D7C0D0049B917 /* NSManagedObject+Report.m */; };
 		770B37ED0679A11B001EADE2 /* CDBookshelf_DataModel.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 770B37EC0679A11B001EADE2 /* CDBookshelf_DataModel.xcdatamodel */; };
 		77C8280E06725ACE000B614F /* CDBookshelf_AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C8280C06725ACE000B614F /* CDBookshelf_AppDelegate.m */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
@@ -29,6 +30,8 @@
 		4C6CD6A9139D78620049B917 /* PragBook+Report.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PragBook+Report.m"; sourceTree = "<group>"; };
 		4C6CD6AD139D7A5C0049B917 /* PragBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PragBook.h; sourceTree = "<group>"; };
 		4C6CD6AE139D7A5C0049B917 /* PragBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PragBook.m; sourceTree = "<group>"; };
+		4C6CD6E8139D7C0D0049B917 /* NSManagedObject+Report.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+Report.h"; sourceTree = "<group>"; };
+		4C6CD6E9139D7C0D0049B917 /* NSManagedObject+Report.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+Report.m"; sourceTree = "<group>"; };
 		770B37EC0679A11B001EADE2 /* CDBookshelf_DataModel.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = CDBookshelf_DataModel.xcdatamodel; sourceTree = "<group>"; };
 		77C82804067257F0000B614F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 		77C8280B06725ACE000B614F /* CDBookshelf_AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDBookshelf_AppDelegate.h; sourceTree = "<group>"; };
@@ -56,6 +59,8 @@
 				77C8280C06725ACE000B614F /* CDBookshelf_AppDelegate.m */,
 				4C6CD6A8139D78620049B917 /* PragBook+Report.h */,
 				4C6CD6A9139D78620049B917 /* PragBook+Report.m */,
+				4C6CD6E8139D7C0D0049B917 /* NSManagedObject+Report.h */,
+				4C6CD6E9139D7C0D0049B917 /* NSManagedObject+Report.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -204,6 +209,7 @@
 				770B37ED0679A11B001EADE2 /* CDBookshelf_DataModel.xcdatamodel in Sources */,
 				4C6CD6AA139D78620049B917 /* PragBook+Report.m in Sources */,
 				4C6CD6AF139D7A5C0049B917 /* PragBook.m in Sources */,
+				4C6CD6EA139D7C0D0049B917 /* NSManagedObject+Report.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

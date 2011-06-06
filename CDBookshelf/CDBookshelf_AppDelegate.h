@@ -18,5 +18,5 @@
 
 @property (copy) NSArray *sortDescriptors;
 - (IBAction)saveAction:sender;
-
+- (IBAction)createReport:(id) sender;
 @end

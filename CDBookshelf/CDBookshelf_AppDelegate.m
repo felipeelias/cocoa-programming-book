@@ -1,4 +1,5 @@
 #import "CDBookshelf_AppDelegate.h"
+#import "NSManagedObject+Report.h"
 
 @implementation CDBookshelf_AppDelegate
 
@@ -202,6 +203,14 @@
 
 - (void) applicationDidFinishLaunching: (NSNotification *) notification {
   self.sortDescriptors = [NSArray arrayWithObject:[[NSSortDescriptor alloc] initWithKey:@"chapterNumber" ascending:YES]];
+}
+
+- (IBAction)createReport:(id) sender {
+  for(NSManagedObject* element in [[self managedObjectContext] registeredObjects]) {
+    if ([element respondsToSelector:@selector(PP_report)]) {
+      [element PP_report];
+    }
+  }
 }
 
 @end
