@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2F7446990DB6B7EA00F9684A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F7446970DB6B7EA00F9684A /* MainMenu.xib */; };
+		4C6CD6AA139D78620049B917 /* PragBook+Report.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6CD6A9139D78620049B917 /* PragBook+Report.m */; };
+		4C6CD6AF139D7A5C0049B917 /* PragBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6CD6AE139D7A5C0049B917 /* PragBook.m */; };
 		770B37ED0679A11B001EADE2 /* CDBookshelf_DataModel.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 770B37EC0679A11B001EADE2 /* CDBookshelf_DataModel.xcdatamodel */; };
 		77C8280E06725ACE000B614F /* CDBookshelf_AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C8280C06725ACE000B614F /* CDBookshelf_AppDelegate.m */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
@@ -23,6 +25,10 @@
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		2F7446980DB6B7EA00F9684A /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* CDBookshelf_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDBookshelf_Prefix.pch; sourceTree = "<group>"; };
+		4C6CD6A8139D78620049B917 /* PragBook+Report.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PragBook+Report.h"; sourceTree = "<group>"; };
+		4C6CD6A9139D78620049B917 /* PragBook+Report.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PragBook+Report.m"; sourceTree = "<group>"; };
+		4C6CD6AD139D7A5C0049B917 /* PragBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PragBook.h; sourceTree = "<group>"; };
+		4C6CD6AE139D7A5C0049B917 /* PragBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PragBook.m; sourceTree = "<group>"; };
 		770B37EC0679A11B001EADE2 /* CDBookshelf_DataModel.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = CDBookshelf_DataModel.xcdatamodel; sourceTree = "<group>"; };
 		77C82804067257F0000B614F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 		77C8280B06725ACE000B614F /* CDBookshelf_AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDBookshelf_AppDelegate.h; sourceTree = "<group>"; };
@@ -48,6 +54,8 @@
 			children = (
 				77C8280B06725ACE000B614F /* CDBookshelf_AppDelegate.h */,
 				77C8280C06725ACE000B614F /* CDBookshelf_AppDelegate.m */,
+				4C6CD6A8139D78620049B917 /* PragBook+Report.h */,
+				4C6CD6A9139D78620049B917 /* PragBook+Report.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -122,6 +130,8 @@
 		7756732906782D8800D1FEB8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4C6CD6AD139D7A5C0049B917 /* PragBook.h */,
+				4C6CD6AE139D7A5C0049B917 /* PragBook.m */,
 				770B37EC0679A11B001EADE2 /* CDBookshelf_DataModel.xcdatamodel */,
 			);
 			name = Models;
@@ -192,6 +202,8 @@
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
 				77C8280E06725ACE000B614F /* CDBookshelf_AppDelegate.m in Sources */,
 				770B37ED0679A11B001EADE2 /* CDBookshelf_DataModel.xcdatamodel in Sources */,
+				4C6CD6AA139D78620049B917 /* PragBook+Report.m in Sources */,
+				4C6CD6AF139D7A5C0049B917 /* PragBook.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +268,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_GC = required;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
