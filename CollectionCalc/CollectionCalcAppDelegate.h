@@ -9,11 +9,13 @@
 #import <Cocoa/Cocoa.h>
 
 @interface CollectionCalcAppDelegate : NSObject <NSApplicationDelegate> {
-    NSWindow *window;
+  NSWindow *window;
   NSNumber *(^multiply)(NSNumber *, NSInteger);
+  NSNumber *(^add)(NSNumber *, NSInteger);
 }
 
 @property (assign) IBOutlet NSWindow *window;
 @property (copy) NSNumber *(^multiply)(NSNumber *, NSInteger);
+@property (copy) NSNumber *(^add)(NSNumber *, NSInteger);
 
 @end

@@ -10,7 +10,7 @@
 
 @implementation CollectionCalcAppDelegate
 
-@synthesize window, multiply;
+@synthesize window, multiply, add;
 
 -(NSArray *) createArray {
   return [NSArray arrayWithObjects:[NSNumber numberWithInt:5],
