@@ -12,22 +12,28 @@
 
 @synthesize window;
 
-- (NSNumber *) add:(NSNumber *)x to:(NSNumber *)y {
+- (NSNumber *) combine:(NSNumber *)x 
+                  with:(NSNumber *)y 
+            usingBlock:(NSInteger (^)(NSInteger, NSInteger))block {  
   NSInteger xAsInt = [x integerValue];
   NSInteger yAsInt = [y integerValue];
-  NSInteger result = xAsInt + yAsInt;
-  return [NSNumber numberWithInteger:result];
-}
-
-- (NSNumber *) multiply:(NSNumber *)x by:(NSNumber *)y {
-  NSInteger xAsInt = [x integerValue];
-  NSInteger yAsInt = [y integerValue];
-  NSInteger result = xAsInt * yAsInt;
+  NSInteger result = block(xAsInt, yAsInt);
   return [NSNumber numberWithInteger:result];
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-	// Insert code here to initialize your application 
+  NSNumber *firstNumber = [NSNumber numberWithInteger:7];
+  NSNumber *secondNumber = [NSNumber numberWithInteger:5];
+  
+  NSNumber *sum = [self combine:firstNumber 
+                           with:secondNumber
+                     usingBlock:^(NSInteger x, NSInteger y) { return x + y; }];
+  NSLog(@"The sum of %@ and %@ is %@.", firstNumber, secondNumber, sum);
+  
+  NSNumber *product = [self combine:firstNumber
+                               with:secondNumber
+                         usingBlock:^(NSInteger x, NSInteger y) { return x * y; }];
+  NSLog(@"The product of %@ and %@ is %@.", firstNumber, secondNumber, product);
 }
 
 @end
