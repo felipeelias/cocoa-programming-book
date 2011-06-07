@@ -33,8 +33,11 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
   NSArray *arrayOfSpinners = [self arrayOfSpinners];
+  NSOperationQueue *queue = [[NSOperationQueue alloc] init];
   for (NSProgressIndicator *spinner in arrayOfSpinners) {
-    [self spin:spinner];
+    [queue addOperation:[[NSInvocationOperation alloc] initWithTarget:self 
+                                                             selector:@selector(spin:) 
+                                                               object:spinner]];
   }
 }
 
