@@ -7,6 +7,7 @@
 //
 
 #import "SpinnerAppDelegate.h"
+#import "SpinnerOperation.h"
 
 @implementation SpinnerAppDelegate
 
@@ -34,7 +35,7 @@
   NSLog(@"Status for %d operations: executing %d and %d are waiting.", [queue operationCount], executing, ready - executing);
 }
 
--(NSArray *) arrayOfSpinners {
+-(NSArray *) arrayOfSpinnersOperations {
   NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:25];
   for (int i = 0; i < 25; i++) {
     NSProgressIndicator *spinner = [[NSProgressIndicator alloc] initWithFrame: NSMakeRect(16 * i + 8, 20, 16, 16)];
@@ -42,23 +43,20 @@
     [spinner setControlSize:NSSmallControlSize];
     [spinner setDisplayedWhenStopped:NO];
     [window.contentView addSubview:spinner];
-    [array addObject:spinner];
+    SpinnerOperation *op = [[SpinnerOperation alloc] initWithSpinner:spinner];
+    [array addObject:op];
   }
   return array;
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-  NSArray *arrayOfSpinners = [self arrayOfSpinners];
+  NSArray *arrayOfSpinnersOperations = [self arrayOfSpinnersOperations];
   
   queue = [[NSOperationQueue alloc] init];
   [queue setMaxConcurrentOperationCount:3];
   
-  for (NSProgressIndicator *spinner in arrayOfSpinners) {
-    [queue addOperationWithBlock:^ {
-      [spinner startAnimation:self];
-      sleep(1);
-      [spinner stopAnimation:self];      
-    }];
+  for (SpinnerOperation *operation in arrayOfSpinnersOperations) {
+    [queue addOperation:operation];
   }
 }
 
