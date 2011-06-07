@@ -8,11 +8,10 @@
 
 #import "PragBook+Report.h"
 
-
 @implementation PragBook(Report)
 
 -(void) PP_report {
-  NSLog(@"%@", self.description);
+  NSLog(@"%@", [self title]);
 }
 
 @end
