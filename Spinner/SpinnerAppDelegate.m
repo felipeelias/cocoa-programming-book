@@ -34,6 +34,7 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
   NSArray *arrayOfSpinners = [self arrayOfSpinners];
   NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+  [queue setMaxConcurrentOperationCount:1];
   for (NSProgressIndicator *spinner in arrayOfSpinners) {
     [queue addOperation:[[NSInvocationOperation alloc] initWithTarget:self 
                                                              selector:@selector(spin:) 
