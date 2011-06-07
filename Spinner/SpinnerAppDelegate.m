@@ -12,12 +12,6 @@
 
 @synthesize window;
 
--(void) spin:(NSProgressIndicator *) spinner {
-  [spinner startAnimation:self];
-  sleep(1);
-  [spinner stopAnimation:self];
-}
-
 -(NSArray *) arrayOfSpinners {
   NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:25];
   for (int i = 0; i < 25; i++) {
@@ -36,9 +30,11 @@
   NSOperationQueue *queue = [[NSOperationQueue alloc] init];
   [queue setMaxConcurrentOperationCount:1];
   for (NSProgressIndicator *spinner in arrayOfSpinners) {
-    [queue addOperation:[[NSInvocationOperation alloc] initWithTarget:self 
-                                                             selector:@selector(spin:) 
-                                                               object:spinner]];
+    [queue addOperation:[NSBlockOperation blockOperationWithBlock:^ {
+      [spinner startAnimation:self];
+      sleep(1);
+      [spinner stopAnimation:self];      
+    }]];
   }
 }
 
