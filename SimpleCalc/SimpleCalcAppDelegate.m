@@ -12,6 +12,15 @@
 
 @synthesize window;
 
+- (NSInteger) tripleWithBlock: (NSInteger (^)(NSInteger)) block {
+  return block(3);
+}
+
+/*
+ * NSNumber *sum = [self combine:firstNumber 
+ *                          with:secondNumber
+ *                    usingBlock:^(NSInteger x, NSInteger y) { return x + y; }];
+ */
 - (NSNumber *) combine:(NSNumber *)x 
                   with:(NSNumber *)y 
             usingBlock:(NSInteger (^)(NSInteger, NSInteger))block {  
@@ -22,18 +31,11 @@
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-  NSNumber *firstNumber = [NSNumber numberWithInteger:7];
-  NSNumber *secondNumber = [NSNumber numberWithInteger:5];
-  
-  NSNumber *sum = [self combine:firstNumber 
-                           with:secondNumber
-                     usingBlock:^(NSInteger x, NSInteger y) { return x + y; }];
-  NSLog(@"The sum of %@ and %@ is %@.", firstNumber, secondNumber, sum);
-  
-  NSNumber *product = [self combine:firstNumber
-                               with:secondNumber
-                         usingBlock:^(NSInteger x, NSInteger y) { return x * y; }];
-  NSLog(@"The product of %@ and %@ is %@.", firstNumber, secondNumber, product);
+  NSInteger multiplicand = 5;
+  NSInteger product = [self tripleWithBlock:^(NSInteger multiplier) {
+    return multiplier * multiplicand;
+  }];
+  NSLog(@"Triple %d is %d.", multiplicand, product);
 }
 
 @end
