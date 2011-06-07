@@ -8,14 +8,14 @@
 
 #import <Cocoa/Cocoa.h>
 
+typedef NSNumber *(^ArithmeticOperation)(NSNumber *, NSInteger);
+
 @interface CollectionCalcAppDelegate : NSObject <NSApplicationDelegate> {
   NSWindow *window;
-  NSNumber *(^multiply)(NSNumber *, NSInteger);
-  NSNumber *(^add)(NSNumber *, NSInteger);
+  ArithmeticOperation multiply, add;
 }
 
 @property (assign) IBOutlet NSWindow *window;
-@property (copy) NSNumber *(^multiply)(NSNumber *, NSInteger);
-@property (copy) NSNumber *(^add)(NSNumber *, NSInteger);
+@property (copy) ArithmeticOperation multiply, add;
 
 @end
