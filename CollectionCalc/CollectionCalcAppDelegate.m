@@ -22,8 +22,10 @@
 
 -(NSArray *) tripleElementsIn: (NSArray *)originalArray {
   NSMutableArray *tempArray = [[NSMutableArray alloc] initWithCapacity:[originalArray count]];
+  __block NSInteger multiplier;
   [originalArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-    [tempArray addObject:multiply(obj, 3)];
+    multiplier = [obj intValue];
+    [tempArray addObject:multiply(obj, multiplier)];
   }];
   return tempArray;
 }
