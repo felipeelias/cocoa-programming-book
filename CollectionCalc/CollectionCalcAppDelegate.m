@@ -10,7 +10,7 @@
 
 @implementation CollectionCalcAppDelegate
 
-@synthesize window;
+@synthesize window, multiply;
 
 -(NSArray *) createArray {
   return [NSArray arrayWithObjects:[NSNumber numberWithInt:5],
@@ -23,13 +23,16 @@
 -(NSArray *) tripleElementsIn: (NSArray *)originalArray {
   NSMutableArray *tempArray = [[NSMutableArray alloc] initWithCapacity:[originalArray count]];
   [originalArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-    [tempArray addObject:[NSNumber numberWithInt:3 * [obj intValue]]];
+    [tempArray addObject:multiply(obj, 3)];
   }];
   return tempArray;
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 	NSArray *numbers = [self createArray];
+  self.multiply = ^(NSNumber *x, NSInteger y) {
+    return [NSNumber numberWithInt:[x intValue] * y];
+  };
   NSLog(@"Elements in the initial array:%@", numbers);
   NSArray *transformedNumbers = [self tripleElementsIn:numbers];
   NSLog(@"Elements in the tripled array:%@", transformedNumbers);

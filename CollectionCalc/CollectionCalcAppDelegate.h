@@ -10,8 +10,10 @@
 
 @interface CollectionCalcAppDelegate : NSObject <NSApplicationDelegate> {
     NSWindow *window;
+  NSNumber *(^multiply)(NSNumber *, NSInteger);
 }
 
 @property (assign) IBOutlet NSWindow *window;
+@property (copy) NSNumber *(^multiply)(NSNumber *, NSInteger);
 
 @end
