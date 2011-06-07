@@ -9,9 +9,12 @@
 #import <Cocoa/Cocoa.h>
 
 @interface SpinnerAppDelegate : NSObject <NSApplicationDelegate> {
-    NSWindow *window;
+  NSWindow *window;
+  NSOperationQueue *queue;
 }
 
 @property (assign) IBOutlet NSWindow *window;
-
+-(IBAction)toggleIsSuspended:(id)sender;
+-(IBAction)cancelAllOperations:(id)sender;
+-(IBAction)queueStatus:(id)sender;
 @end

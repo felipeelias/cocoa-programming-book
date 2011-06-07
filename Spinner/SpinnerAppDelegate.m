@@ -12,6 +12,28 @@
 
 @synthesize window;
 
+-(IBAction)cancelAllOperations:(id)sender {
+  [queue cancelAllOperations];
+}
+
+-(IBAction)toggleIsSuspended:(id)sender {
+  [queue setSuspended:![queue isSuspended]];
+}
+
+-(IBAction)queueStatus:(id)sender {
+  NSArray *ops =[queue operations];
+  int executing =0;
+  int ready=0;
+  
+  for (NSOperation *operation in ops) {
+    if ([operation isExecuting])
+      executing++;
+    if ([operation isReady])
+      ready++;
+  }
+  NSLog(@"Status for %d operations: executing %d and %d are waiting.", [queue operationCount], executing, ready - executing);
+}
+
 -(NSArray *) arrayOfSpinners {
   NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:25];
   for (int i = 0; i < 25; i++) {
@@ -27,8 +49,10 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
   NSArray *arrayOfSpinners = [self arrayOfSpinners];
-  NSOperationQueue *queue = [[NSOperationQueue alloc] init];
-  [queue setMaxConcurrentOperationCount:1];
+  
+  queue = [[NSOperationQueue alloc] init];
+  [queue setMaxConcurrentOperationCount:3];
+  
   for (NSProgressIndicator *spinner in arrayOfSpinners) {
     [queue addOperationWithBlock:^ {
       [spinner startAnimation:self];
