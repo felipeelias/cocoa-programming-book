@@ -9,7 +9,8 @@
 #import <Cocoa/Cocoa.h>
 
 @interface CallbackAppDelegate : NSObject <NSApplicationDelegate> {
-    NSWindow *window;
+  NSWindow *window;
+  NSObject *observer;
 }
 
 @property (assign) IBOutlet NSWindow *window;

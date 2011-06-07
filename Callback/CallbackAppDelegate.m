@@ -12,8 +12,17 @@
 
 @synthesize window;
 
+- (void) registerWithBlock {
+  observer = [[[NSNotificationCenter defaultCenter] addObserverForName:nil 
+                                                    object:nil 
+                                                     queue:nil 
+                                                usingBlock: ^(NSNotification *notification) {
+                                                  NSLog(@"Received: %@.", [notification name]);
+                                                }] retain];
+}
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-	// Insert code here to initialize your application 
+	[self registerWithBlock];
 }
 
 @end
