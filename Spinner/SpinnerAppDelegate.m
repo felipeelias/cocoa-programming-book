@@ -30,11 +30,11 @@
   NSOperationQueue *queue = [[NSOperationQueue alloc] init];
   [queue setMaxConcurrentOperationCount:1];
   for (NSProgressIndicator *spinner in arrayOfSpinners) {
-    [queue addOperation:[NSBlockOperation blockOperationWithBlock:^ {
+    [queue addOperationWithBlock:^ {
       [spinner startAnimation:self];
       sleep(1);
       [spinner stopAnimation:self];      
-    }]];
+    }];
   }
 }
 
